@@ -61,31 +61,44 @@ https://templatemo.com/tm-503-newline
                 <div class="container">
                   <div class="row">
                     <div class="col-md-12">
-                      <div class="content first-content">
+                      <div class="content first-content" style="padding-bottom: 100px">
                         <h4>Shipping Cost Calculator</h4>
                         <div class="container-fluid">
-                          <div class="text-center col-md-4 col-md-offset-4">
-                            <label class="text-left" for="fromCountry">From</label>
-                            <input id="fromCountry" type="text" value="Sri Lanka" readonly required class="form-control">
-                          </div>
+                          <form id="calculator">
+                            <div class="text-center col-md-4 col-md-offset-4">
+                              <label class="text-left" for="fromCountry">From</label>
+                              <input name="fromCountry" id="fromCountry" type="text" value="Sri Lanka" readonly required class="form-control">
+                            </div>
 
-                          <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
-                            <label class="text-left" for="toCountry">To</label>
-                            <input id="toCountry" type="text" required class="form-control">
-                          </div>
+                            <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
+                              <label class="text-left" for="toCountry">To</label>
+                              <input name="toCountry" id="toCountry" class="form-control" list="countryList" required>
+                              <datalist id="countryList"></datalist>
+                            </div>
 
-                          <select class="form-control basicAutoSelect" name="simple_select"
-                                  placeholder="type to search..."
-                                  data-url="/js/data.json" autocomplete="false">
-                          </select>
+                            <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
+                              <label class="text-left" for="weight">Total Weight(gram)</label>
+                              <input name="weight" id="weight" type="number" required class="form-control">
+                            </div>
 
-                          <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
-                            <label class="text-left" for="toCountry">Total Weight(gram)</label>
-                            <input id="weight" type="number" required class="form-control">
-                          </div>
+                            <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
+                              <div><label for="isRegistered"> Registered Post</label></div>
+                              <div><input checked type="checkbox" id="isRegistered" name="isRegistered" value="true" style="height: 40px; width: 40px;"></div>
+                              </div>
+                            </div>
+
+                            <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
+                              <div class="">
+                                <button class="btn-primary-custom" type="submit" onclick="calculateFee()" id="calForm-submit">Calculate</button>
+                              </div>
+                            </div>
+                          </form>
+
+
+
 <!--                          <div class="col-md-11 mr-2">-->
-<!--                            <form id="calculator" action="" method="post">-->
-<!--                              <fieldset>-->
+<!--
+                            <fieldset>-->
 <!--                                <input name="name" type="text" class="form-control" id="name" placeholder="Your Name"-->
 <!--                                       required="">-->
 <!--                              </fieldset>-->
@@ -98,9 +111,6 @@ https://templatemo.com/tm-503-newline
 <!--                              </fieldset>-->
 <!--                            </form>-->
 <!--                          </div>-->
-                        </div>
-                        <div class="primary-button">
-                          <a href="#">Discover More</a>
                         </div>
                       </div>
                     </div>
@@ -308,10 +318,11 @@ https://templatemo.com/tm-503-newline
     
 <!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/custom.js"></script>
+<!--        <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>-->
+
         <script src="js/main.js"></script>
     </body>
 </html>

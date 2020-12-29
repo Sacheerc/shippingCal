@@ -641,6 +641,5 @@ jQuery(document).ready(function($){
       return this;
   };
 
-  readRateData();
-  $('.basicAutoSelect').autoComplete();
+  setCountry();
 });

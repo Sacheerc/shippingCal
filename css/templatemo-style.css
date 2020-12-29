@@ -236,6 +236,30 @@ video::-webkit-media-controls {
   letter-spacing: 0.5px;
 }
 
+.btn-primary-custom{
+  display: inline-block;
+  background-color: #ffbb05;
+  color: #343434;
+  font-size: 13px;
+  padding: 12px 18px;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.form-control{
+  height: 45px;
+}
+
+.btn-primary-custom:hover {
+  background-color: transparent;
+  border: 1px solid #ffbb05;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+}
+
+
+
 .first-content h4 {
   font-size: 19px;
   text-transform: uppercase;
