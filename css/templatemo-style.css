@@ -236,6 +236,11 @@ video::-webkit-media-controls {
   letter-spacing: 0.5px;
 }
 
+.result-card{
+  background-color: #ffbb05;
+  border-radius: 5px;
+}
+
 .btn-primary-custom{
   display: inline-block;
   background-color: #ffbb05;

@@ -70,15 +70,38 @@ function calculateFee() {
     form.addEventListener('submit', handleForm)
 
     let toCountry = document.forms["calculator"]["toCountry"].value;
-    toCountry = findObject(toCountry)
     let fromCountry = document.forms["calculator"]["fromCountry"].value;
     let weight = document.forms["calculator"]["weight"].value;
+    let isRegistered = document.forms["calculator"]["isRegistered"].checked;
+    console.log(isRegistered)
+    toCountry = findObject(toCountry)
     if (toCountry && fromCountry && weight){
+        document.getElementById("detailForm").style.display = "none";
+        document.getElementById("loadingUi").style.display = "block";
         let group = findGroup(toCountry.Group);
-        let total = calculateSum(weight, group.first20, group.addtional10, true);
-        console.log(total);
+        let total = calculateSum(weight, group.first20, group.addtional10, isRegistered);
+        let summary = `<h5>From: ${fromCountry}</h5>
+                                        <h5>To: ${toCountry.Country} (GROUP - ${toCountry.Group})</h5>
+                                        <h5>Weight: ${weight} g</h5>
+                                        <h5>Price for First 20g: ${group.first20}.00 Rs</h5>
+                                        <h5>Price for Additional 10g: ${group.addtional10}.00 Rs</h5>`
+        if (isRegistered) {
+            summary += `<h5>Registered Post: Yes</h5>`;
+        } else {
+            summary += `<h5>Registered Post: No</h5>`;
+        }
+        document.getElementById("summary").innerHTML = summary;
+        document.getElementById("totalFee").innerHTML = `Total Cost: ${total}.00 Rs`
+        document.getElementById("loadingUi").style.display = "none";
+        document.getElementById("resultSection").style.display = "block"
+    } else {
+        // alert("Please Complete All fields and Try again")
     }
 
+}
+
+function reload() {
+    window.reload();
 }
 
 function calculateSum(weight, first20, additional10, isRegistered){
@@ -90,6 +113,7 @@ function calculateSum(weight, first20, additional10, isRegistered){
         let extraCharge = Math.floor(extraWeight/10)*additional10;
         totalFee = first20 + extraCharge;
     }
+
     if (isRegistered){
         totalFee += 200;
     }
