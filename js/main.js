@@ -641,18 +641,6 @@ jQuery(document).ready(function($){
       return this;
   };
 
-  $.ajax({
-    type: "GET",
-    url: "data.csv",
-    success: readCSV
-  });
-
-  function readCSV(textdata) {
-    console.log(textdata)
-    // var data = $.csv.toObjects(csv);
-
-    // console.log(data);
-  }
-
+  readRateData();
 
 });
