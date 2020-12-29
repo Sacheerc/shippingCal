@@ -642,5 +642,5 @@ jQuery(document).ready(function($){
   };
 
   readRateData();
-
+  $('.basicAutoSelect').autoComplete();
 });
