@@ -80,15 +80,14 @@ function calculateFee() {
         document.getElementById("loadingUi").style.display = "block";
         let group = findGroup(toCountry.Group);
         let total = calculateSum(weight, group.first20, group.addtional10, isRegistered);
-        let summary = `<h5>From: ${fromCountry}</h5>
-                                        <h5>To: ${toCountry.Country} (GROUP - ${toCountry.Group})</h5>
-                                        <h5>Weight: ${weight} g</h5>
-                                        <h5>Price for First 20g: ${group.first20}.00 Rs</h5>
-                                        <h5>Price for Additional 10g: ${group.addtional10}.00 Rs</h5>`
+        let summary = `<table class="table table-borderless" style="font-size: 14px"><tbody>
+                                        <tr><th>From</th> <td> ${fromCountry}</td></tr>
+                                        <tr><th>To</th> <td> ${toCountry.Country} (GROUP - ${toCountry.Group})</td></tr>
+                                        <tr><th>Weight</th> <td> ${weight} g</td></tr>`
         if (isRegistered) {
-            summary += `<h5>Registered Post: Yes</h5>`;
+            summary += `<tr><th>Registered Post</th> <td>Yes</td></tr></tbody></table>`;
         } else {
-            summary += `<h5>Registered Post: No</h5>`;
+            summary += `<tr><th>Registered Post</th> <td>No</td></tr></tbody></table>`;
         }
         document.getElementById("summary").innerHTML = summary;
         document.getElementById("totalFee").innerHTML = `Total Cost: ${total}.00 Rs`
