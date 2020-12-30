@@ -534,29 +534,29 @@ jQuery(document).ready(function($){
     });
     
     //change visible slide
-    sliderNav.on('click', 'li', function(event){
-      event.preventDefault();
-      var selectedItem = $(this);
-      if(!selectedItem.hasClass('selected')) {
-        // if it's not already selected
-        var selectedPosition = selectedItem.index(),
-          activePosition = slidesWrapper.find('li.selected').index();
-        
-        if( activePosition < selectedPosition) {
-          nextSlide(slidesWrapper.find('.selected'), slidesWrapper, sliderNav, selectedPosition);
-        } else {
-          prevSlide(slidesWrapper.find('.selected'), slidesWrapper, sliderNav, selectedPosition);
-        }
-
-        //this is used for the autoplay
-        visibleSlidePosition = selectedPosition;
-
-        updateSliderNavigation(sliderNav, selectedPosition);
-        updateNavigationMarker(navigationMarker, selectedPosition+1);
-        //reset autoplay
-        setAutoplay(slidesWrapper, slidesNumber, autoPlayDelay);
-      }
-    });
+    // sliderNav.on('click', 'li', function(event){
+    //   event.preventDefault();
+    //   var selectedItem = $(this);
+    //   if(!selectedItem.hasClass('selected')) {
+    //     // if it's not already selected
+    //     var selectedPosition = selectedItem.index(),
+    //       activePosition = slidesWrapper.find('li.selected').index();
+    //
+    //     if( activePosition < selectedPosition) {
+    //       nextSlide(slidesWrapper.find('.selected'), slidesWrapper, sliderNav, selectedPosition);
+    //     } else {
+    //       prevSlide(slidesWrapper.find('.selected'), slidesWrapper, sliderNav, selectedPosition);
+    //     }
+    //
+    //     //this is used for the autoplay
+    //     visibleSlidePosition = selectedPosition;
+    //
+    //     updateSliderNavigation(sliderNav, selectedPosition);
+    //     updateNavigationMarker(navigationMarker, selectedPosition+1);
+    //     //reset autoplay
+    //     setAutoplay(slidesWrapper, slidesNumber, autoPlayDelay);
+    //   }
+    // });
   }
 
   function nextSlide(visibleSlide, container, pagination, n){

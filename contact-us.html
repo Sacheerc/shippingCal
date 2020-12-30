@@ -56,76 +56,68 @@
     <ul class="cd-hero-slider">
         <li class="selected">
             <div class="heading">
-                <h1>SHIPPINGCAL</h1>
-                <span>Welcome to ShippingCal Tool</span>
+                <h1>Contact us</h1>
+                <span>You'll be responded within 48 hrs</span>
             </div>
-            <div class="cd-full-width first-slide">
+            <div class="cd-half-width fivth-slide">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="content first-content" style="padding-bottom: 100px; min-height: 480px">
-                                <h4>Shipping Cost Calculator</h4>
-                                <div id="loadingUi" style="display: none">
-                                    <img src="./img/loading.gif" alt="">
-                                </div>
+                            <div class="content fivth-content">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="left-info">
+                                            <h4>Getting in touch is easy!</h4>
+                                            <br>
+                                            <p><em>104/A, Ganepola<br>Kotugoda <br> 11390 <br>
+                                                <strong>Sri Lanka</strong></em></p>
 
-                                <div id="resultSection" class="col-md-4 col-md-offset-4" style="display: none">
-                                    <hr>
-                                    <div id="summary" class="text-left"
-                                         style="padding: 0px 20px 20px 20px; font-size: 40px">
+                                            <ul class="social-icons">
+                                                <i><a href="#"><i class="fa fa-facebook"></i></a></i>
+                                                <i><a href="#"><i class="fa fa-twitter"></i></a></i>
+                                                <i><a href="#"><i class="fa fa-linkedin"></i></a></i>
+                                                <i><a href="#"><i class="fa fa-rss"></i></a></i>
+                                                <i><a href="#"><i class="fa fa-behance"></i></a></i>
+                                            </ul>
+                                        </div>
                                     </div>
-
-                                    <div class="text-center col-xs-12 result-card">
-                                        <h3 id="totalFee"></h3>
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <form id="contact" action="" method="post">
+                                                <div class="col-md-6">
+                                                    <fieldset>
+                                                        <input name="name" type="text" class="form-control" id="name"
+                                                               placeholder="Your Name" required="">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <fieldset>
+                                                        <input name="email" type="email" class="form-control" id="email"
+                                                               placeholder="Email" required="">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <fieldset>
+                                                        <textarea name="message" rows="6" class="form-control"
+                                                                  id="message" placeholder="Message"
+                                                                  required=""></textarea>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <fieldset>
+                                                        <button type="submit" id="form-submit" class="btn">Send
+                                                            Message
+                                                        </button>
+                                                    </fieldset>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-
-                                    <div class="text-center text-info" style="margin-top: 80px">
-                                        <a href="" onclick="reload()">Go Back</a>
-                                    </div>
-                                </div>
-
-                                <div class="container-fluid" id="detailForm">
-                                    <form id="calculator">
-                                        <div class="text-center col-md-4 col-md-offset-4">
-                                            <label class="text-left" for="fromCountry">From</label>
-                                            <input name="fromCountry" id="fromCountry" type="text" value="Sri Lanka"
-                                                   readonly required class="form-control">
-                                        </div>
-
-                                        <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
-                                            <label class="text-left" for="toCountry">To</label>
-                                            <input name="toCountry" id="toCountry" class="form-control"
-                                                   list="countryList" required>
-                                            <datalist id="countryList"></datalist>
-                                        </div>
-
-                                        <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
-                                            <label class="text-left" for="weight">Total Weight(gram)</label>
-                                            <input name="weight" id="weight" type="number" required
-                                                   class="form-control">
-                                        </div>
-
-                                        <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
-                                            <div><label for="isRegistered"> Registered Post</label></div>
-                                            <div><input type="checkbox" checked id="isRegistered" name="isRegistered"
-                                                        style="height: 40px; width: 40px;"></div>
-                                        </div>
-
-                                        <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px">
-                                            <div class="">
-                                                <button class="btn-primary-custom" type="submit"
-                                                        onclick="calculateFee()"
-                                                        id="calForm-submit">Calculate
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </li>
     </ul> <!-- .cd-hero-slider -->
