@@ -11,8 +11,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Sri Lanka Post Shipping Cost Calculator Free - ShippingCal</title>
-    <meta name="description" content="A free tool for calculate shipping cost via Sri Lankan Standard International Mail Service">
-    <meta name="keywords" content="Sri Lankan Post, Sri Lankan Post Shipping Cost, SL Post Shipping Cost, shipping cost calculator sri lanka">
+    <meta name="description"
+          content="A free tool for calculate shipping cost via Sri Lankan Standard International Mail Service">
+    <meta name="keywords"
+          content="Sri Lankan Post, Sri Lankan Post Shipping Cost, SL Post Shipping Cost, shipping cost calculator sri lanka">
     <meta name="author" content="Dhahas Technologies">
     <!--
     Newline Template
@@ -71,9 +73,11 @@
                                 <h4>Shipping Cost Calculator</h4>
                                 <div id="loadingUi" style="display: none">
                                     <img src="./img/loading.gif" alt="">
-                                    <div id="waitingInfo" class="container text-center text-info" style="margin-top: 20px; display: none">
+                                    <div id="waitingInfo" class="container text-center text-info"
+                                         style="margin-top: 20px; display: none">
                                         <h5 class="text-info">PLease Wait!</h5>
-                                        <h5>We are fetching today currency exchange rates from Sri Lanka central bank.</h5>
+                                        <h5>We are fetching today currency exchange rates from Sri Lanka central
+                                            bank.</h5>
                                     </div>
                                 </div>
                                 <div class="row" style="display: block">
@@ -84,11 +88,14 @@
                                             </div>
                                         </div>
 
-                                        <div id="resultSection2" class="col-md-4 text-left" style="display: none; padding:0px 20px 0px 20px;">
-                                            <h6 class="text-info">Latest currency exchange rates were updated successfully</h6>
+                                        <div id="resultSection2" class="col-md-4 text-left"
+                                             style="display: none; padding:0px 20px 0px 20px;">
+                                            <h6 class="text-info">Latest currency exchange rates were updated
+                                                successfully</h6>
                                             <div>
                                                 <label class="text-left" for="currency2">Convert To</label>
-                                                <select id="currency2" class="form-control" onchange="updateResults(value)">
+                                                <select id="currency2" class="form-control"
+                                                        onchange="updateResults(value)">
                                                     <option value="0">LKR</option>
                                                     <option value="1">USD</option>
                                                     <option value="2">AUD</option>
@@ -107,46 +114,56 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
-                                <div class="container-fluid" id="detailForm" style="display: block">
-                                    <form id="calculator">
+                                </div>
+                                <div class="container-fluid" id="detailForm">
+                                    <form id="calculator" class="was-validated">
                                         <div class="row">
                                             <div class="text-center col-md-4 col-md-offset-1">
                                                 <div>
                                                     <label class="text-left" for="fromCountry">From</label>
-                                                    <input name="fromCountry" id="fromCountry" type="text" value="Sri Lanka"
+                                                    <input name="fromCountry" id="fromCountry" type="text"
+                                                           value="Sri Lanka"
                                                            readonly required class="form-control">
                                                 </div>
 
                                                 <div style="margin-top: 20px">
-                                                    <label class="text-left" for="toCountry">To</label>
+                                                    <label class="text-center" for="toCountry">To</label>
                                                     <input name="toCountry" id="toCountry" class="form-control"
                                                            list="countryList" required>
                                                     <datalist id="countryList"></datalist>
+                                                    <div class="text-left">
+                                                        <small id="validate-country" style="color: red; display: none">Please select a valid country</small>
+                                                    </div>
                                                 </div>
 
                                                 <div style="margin-top: 20px">
                                                     <label class="text-left" for="weight">Total Weight(gram)</label>
                                                     <input name="weight" id="weight" type="number" required
                                                            class="form-control">
+                                                    <div class="text-left">
+                                                        <small id="validate-weight" style="color: red; display: none">Weight cannot be empty</small>
+                                                    </div>
                                                 </div>
 
                                                 <div style="margin-top: 20px">
                                                     <div><label for="isRegistered"> Registered Post</label></div>
-                                                    <div><input type="checkbox" checked id="isRegistered" name="isRegistered"
+                                                    <div><input type="checkbox" checked id="isRegistered"
+                                                                name="isRegistered"
                                                                 style="height: 40px; width: 40px;"></div>
                                                 </div>
                                             </div>
-                                            <div class="text-center col-md-4 col-md-offset-2">
+                                            <div class="text-center col-md-4 col-md-offset-2 expense">
                                                 <div>
                                                     <label class="text-left" for="expense">Expense (Optional)</label>
-                                                    <input name="expense" id="expense" value="0" type="number"
-                                                           required class="form-control">
+                                                    <input name="expense" id="expense" placeholder="0" type="number"
+                                                           class="form-control">
                                                 </div>
                                                 <div style="margin-top: 20px">
-                                                    <label class="text-left" for="expected_profit">Expected Profit (optional)</label>
-                                                    <input name="expected_profit" value="0" id="expected_profit" type="number"
-                                                            required class="form-control">
+                                                    <label class="text-left" for="expected_profit">Expected Profit
+                                                        (optional)</label>
+                                                    <input name="expected_profit" placeholder="0" id="expected_profit"
+                                                           type="number"
+                                                           class="form-control">
                                                 </div>
                                                 <div style="margin-top: 20px">
                                                     <label class="text-left" for="currency">Convert To</label>

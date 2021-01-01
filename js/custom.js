@@ -71,7 +71,7 @@ const rateData = [
         "Group": "H"
     },
     {
-        "Country": "Antilles (Netherland\nAntilles)",
+        "Country": "Antilles (Netherland Antilles)",
         "Group": "H"
     },
     {
@@ -291,7 +291,7 @@ const rateData = [
         "Group": "G"
     },
     {
-        "Country": "Korea North (Dem.\nPeople's Rep. of Korea)",
+        "Country": "Korea North (Dem. People's Rep. of Korea)",
         "Group": "D"
     },
     {
@@ -527,7 +527,7 @@ const rateData = [
         "Group": "H"
     },
     {
-        "Country": "Micronesia(Federated\nStates)",
+        "Country": "Micronesia(Federated States)",
         "Group": "G"
     },
     {
@@ -719,7 +719,7 @@ const rateData = [
         "Group": "H"
     },
     {
-        "Country": "East Timor / Timor-Leste\n(Dem. Rep)",
+        "Country": "East Timor/Timor-Leste(Dem. Rep)",
         "Group": "G"
     },
     {
@@ -875,7 +875,7 @@ const rateData = [
         "Group": "E"
     },
     {
-        "Country": "St. Christopher (St. Kitts)\n& Nevis",
+        "Country": "St. Christopher (St. Kitts) & Nevis",
         "Group": "H"
     },
     {
@@ -1004,7 +1004,7 @@ let exchangeRates = [];
 let total;
 let itemPrice;
 
-function setCountry(){
+function setCountry() {
     let list = "";
     rateData.forEach(rate => {
         list += `<option value ="${rate.Country}">`
@@ -1012,9 +1012,43 @@ function setCountry(){
     document.getElementById("countryList").innerHTML = list;
 }
 
+function displayResults(toCountry, weight, isRegistered, expense, expected_profit, fromCountry, currency) {
+    let group = findGroup(toCountry.Group);
+    total = calculateSum(weight, group.first20, group.addtional10, isRegistered);
+    itemPrice = total + expense + expected_profit;
+    let summary = `<table class="table table-borderless" style="font-size: 14px"><tbody>
+                                        <tr><th>From</th> <td> ${fromCountry}</td></tr>
+                                        <tr><th>To</th> <td> ${toCountry.Country} (GROUP - ${toCountry.Group})</td></tr>
+                                        <tr><th>Weight</th> <td> ${weight} g</td></tr>
+                                        <tr><th>Expense</th> <td> ${expense} LKR</td></tr>
+                                        <tr><th>Expected Profit</th> <td> ${expected_profit} LKR</td></tr>
+                                        <tr id="tableCurrency"><th>Currency</th> <td> ${exchangeRates[currency].currency}</td></tr>
+`
+    if (isRegistered) {
+        summary += `<tr><th>Registered Post</th> <td>Yes</td></tr></tbody></table>`;
+    } else {
+        summary += `<tr><th>Registered Post</th> <td>No</td></tr></tbody></table>`;
+    }
+
+    let convertedPostalFee = convertCurrency(total, currency);
+    let convertedItemPrice = convertCurrency(itemPrice, currency);
+
+    document.getElementById("summary").innerHTML = summary;
+    document.getElementById("totalFee").innerHTML = `Postal Fee: ${convertedPostalFee}`;
+    document.getElementById("itemPrice").innerHTML = `Total Item Price: ${convertedItemPrice}`;
+    document.getElementById("loadingUi").style.display = "none";
+    document.getElementById("currency2").value = currency;
+    document.getElementById("resultSection").style.display = "block";
+    document.getElementById("resultSection2").style.display = "block";
+}
+
 function calculateFee() {
     let form = document.getElementById("calculator");
-    function handleForm(event) { event.preventDefault(); }
+
+    function handleForm(event) {
+        event.preventDefault();
+    }
+
     form.addEventListener('submit', handleForm)
 
     let toCountry = document.forms["calculator"]["toCountry"].value;
@@ -1025,44 +1059,28 @@ function calculateFee() {
     let expected_profit = parseFloat(document.forms["calculator"]["expected_profit"].value);
     let currency = parseInt(document.forms["calculator"]["currency"].value);
 
+    if (!expense) {expense =0;}
+    if (!expected_profit) {expected_profit=0;}
     toCountry = findObject(toCountry);
-    fetchExchangeRates().then(r => {
-        if (toCountry && fromCountry && weight){
-            let group = findGroup(toCountry.Group);
-            total = calculateSum(weight, group.first20, group.addtional10, isRegistered);
-            itemPrice = total + expense + expected_profit;
-            let summary = `<table class="table table-borderless" style="font-size: 14px"><tbody>
-                                        <tr><th>From</th> <td> ${fromCountry}</td></tr>
-                                        <tr><th>To</th> <td> ${toCountry.Country} (GROUP - ${toCountry.Group})</td></tr>
-                                        <tr><th>Weight</th> <td> ${weight} g</td></tr>
-                                        <tr><th>Expense</th> <td> ${expense} LKR</td></tr>
-                                        <tr><th>Expected Profit</th> <td> ${expected_profit} LKR</td></tr>
-                                        <tr id="tableCurrency"><th>Currency</th> <td> ${exchangeRates[currency].currency}</td></tr>
-`
-            if (isRegistered) {
-                summary += `<tr><th>Registered Post</th> <td>Yes</td></tr></tbody></table>`;
-            } else {
-                summary += `<tr><th>Registered Post</th> <td>No</td></tr></tbody></table>`;
-            }
 
-            let convertedPostalFee = convertCurrency(total, currency);
-            let convertedItemPrice = convertCurrency(itemPrice, currency);
-
-            document.getElementById("summary").innerHTML = summary;
-            document.getElementById("totalFee").innerHTML = `Total Cost: ${convertedPostalFee}`;
-            document.getElementById("itemPrice").innerHTML = `Item Price: ${convertedItemPrice}`;
-            document.getElementById("loadingUi").style.display = "none";
-            document.getElementById("currency2").value = currency;
-            document.getElementById("resultSection").style.display = "block";
-            document.getElementById("resultSection2").style.display = "block";
-        } else {
-            // alert("Please Complete All fields and Try again")
+    if (toCountry && fromCountry && weight) {
+        document.getElementById("validate-country").style.display = "none"
+        document.getElementById("validate-weight").style.display = "none"
+        fetchExchangeRates().then(r => {
+            displayResults(toCountry, weight, isRegistered, expense, expected_profit, fromCountry, currency);
+        });
+    } else {
+        if (!toCountry) {
+            document.getElementById("validate-country").style.display = "block"
+        } else if (!weight) {
+            document.getElementById("validate-country").style.display = "none"
+            document.getElementById("validate-weight").style.display = "block"
         }
-    });
+    }
 }
 
 function convertCurrency(value, currency) {
-    let finalVal = Number((value*exchangeRates[currency].fromLkr).toFixed(2))
+    let finalVal = Number((value * exchangeRates[currency].fromLkr).toFixed(2))
     let convertedValue = `${finalVal} ${exchangeRates[currency].currency}`;
     return convertedValue;
 }
@@ -1071,61 +1089,61 @@ function updateResults(value) {
     let currency = value;
     let convertedPostalFee = convertCurrency(total, currency);
     let convertedItemPrice = convertCurrency(itemPrice, currency);
-    document.getElementById("totalFee").innerHTML = `Total Cost: ${convertedPostalFee}`;
-    document.getElementById("itemPrice").innerHTML = `Item Price: ${convertedItemPrice}`;
-    document.getElementById("tableCurrency").innerHTML =`<th>Currency</th> <td> ${exchangeRates[currency].currency}</td>`
+    document.getElementById("totalFee").innerHTML = `Postal Fee: ${convertedPostalFee}`;
+    document.getElementById("itemPrice").innerHTML = `Total Item Price: ${convertedItemPrice}`;
+    document.getElementById("tableCurrency").innerHTML = `<th>Currency</th> <td> ${exchangeRates[currency].currency}</td>`
 }
 
 function reload() {
     window.reload();
 }
 
-function calculateSum(weight, first20, additional10, isRegistered){
+function calculateSum(weight, first20, additional10, isRegistered) {
     let totalFee = 0;
-    let extraWeight =  weight - 20;
-    if(extraWeight <= 0){
+    let extraWeight = weight - 20;
+    if (extraWeight <= 0) {
         totalFee = first20;
     } else {
-        let extraCharge = Math.floor(extraWeight/10)*additional10;
+        let extraCharge = Math.floor(extraWeight / 10) * additional10;
         totalFee = first20 + extraCharge;
     }
 
-    if (isRegistered){
+    if (isRegistered) {
         totalFee += 200;
     }
 
     return totalFee;
 }
 
-function findGroup(toGroup){
+function findGroup(toGroup) {
     let toCountryGroup;
     groupRates.forEach(group => {
-        if (group.group === toGroup){
+        if (group.group === toGroup) {
             toCountryGroup = group;
         }
     })
     return toCountryGroup;
 }
 
-function findObject(country){
+function findObject(country) {
     let obj;
-    rateData.forEach( data =>{
-        if(data.Country === country) {
+    rateData.forEach(data => {
+        if (data.Country === country) {
             obj = data;
         }
     });
     return obj;
 }
 
-async function fetchExchangeRates () {
+async function fetchExchangeRates() {
     document.getElementById("detailForm").style.display = "none";
     document.getElementById("loadingUi").style.display = "block";
-    if(localStorage.getItem("date") !== new Date().toDateString()){
+    if (localStorage.getItem("date") !== new Date().toDateString()) {
         document.getElementById("waitingInfo").style.display = "block";
         localStorage.clear();
         const response = await fetch('https://calm-ravine-73220.herokuapp.com/https://www.x-rates.com/table/?from=LKR&amount=1');
         const text = await response.text();
-        let currency = [{currency:"LKR", fromLkr:1, toLkr:1}];
+        let currency = [{currency: "LKR", fromLkr: 1, toLkr: 1}];
         let expUSD = /(from=LKR&amp;to=USD.*<\/a>|from=USD&amp;to=LKR.*<\/a>)/g;
         let expAUD = /(from=LKR&amp;to=AUD.*<\/a>|from=AUD&amp;to=LKR.*<\/a>)/g;
         let expEUR = /(from=LKR&amp;to=EUR.*<\/a>|from=EUR&amp;to=LKR.*<\/a>)/g;
@@ -1138,7 +1156,7 @@ async function fetchExchangeRates () {
         localStorage.setItem("currency", JSON.stringify(currency));
         exchangeRates = currency;
         document.getElementById("waitingInfo").style.display = "block";
-    } else{
+    } else {
         exchangeRates = JSON.parse(localStorage.getItem("currency"));
     }
 }
