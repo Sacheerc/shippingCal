@@ -642,4 +642,16 @@ jQuery(document).ready(function($){
   };
 
   setCountry();
+
+  // $('#container').load('http://google.com'); // SERIOUSLY!
+
+  // $.ajax({
+  //   url: 'https://calm-ravine-73220.herokuapp.com/https://www.google.com/search?q=aud+to+lkr',
+  //   type: 'GET',
+  //   success: function(res) {
+  //     console.log(res)
+  //     var headline = $(res.responseText).find('a.tsh').text();
+  //     // alert(headline);
+  //   }
+  // });
 });
