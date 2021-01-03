@@ -1040,6 +1040,9 @@ function displayResults(toCountry, weight, isRegistered, expense, expected_profi
     document.getElementById("currency2").value = currency;
     document.getElementById("resultSection").style.display = "block";
     document.getElementById("resultSection2").style.display = "block";
+    document.getElementById("resultSection").scrollIntoView({
+        behavior: 'smooth'
+    });
 }
 
 function calculateFee() {
