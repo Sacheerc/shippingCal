@@ -7,7 +7,7 @@ https://templatemo.com/tm-503-newline
 */
 
 body {
-	font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p {
@@ -17,22 +17,22 @@ p {
   line-height: 25px;
 }
 
-video { 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
-    transition: 1s opacity;
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
 }
 
 video::-webkit-media-controls {
-    display:none !important;
+  display: none !important;
 }
 
 .overlay {
@@ -42,7 +42,7 @@ video::-webkit-media-controls {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(0,0,0,0.75); /*dim the background*/
+  background-color: rgba(0, 0, 0, 0.75); /*dim the background*/
 }
 
 .primary-button a {
@@ -62,6 +62,16 @@ video::-webkit-media-controls {
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
+}
+
+.inform-adunit {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .inform-adunit {
+    margin-top: 100px;
+  }
 }
 
 .cd-hero {
@@ -106,7 +116,8 @@ video::-webkit-media-controls {
   -o-transform: translateX(-100%);
   transform: translateX(-100%);
 }
-.cd-hero-slider li.is-moving, .cd-hero-slider li.selected {
+.cd-hero-slider li.is-moving,
+.cd-hero-slider li.selected {
   /* the is-moving class is assigned to the slide which is moving outside the viewport */
   -webkit-transition: -webkit-transform 0.5s;
   -moz-transition: -moz-transform 0.5s;
@@ -182,7 +193,6 @@ video::-webkit-media-controls {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-
 /*
 =====================
 ----- TOP PART ------
@@ -194,10 +204,9 @@ video::-webkit-media-controls {
   background-size: cover;
   position: absolute;
   overflow: hidden;
-  top:0;
+  top: 0;
   left: 0;
 }
-
 
 /*
 =======================
@@ -236,12 +245,12 @@ video::-webkit-media-controls {
   letter-spacing: 0.5px;
 }
 
-.result-card{
+.result-card {
   background-color: #ffbb05;
   border-radius: 5px;
 }
 
-.btn-primary-custom{
+.btn-primary-custom {
   display: inline-block;
   background-color: #ffbb05;
   color: #343434;
@@ -251,7 +260,7 @@ video::-webkit-media-controls {
   text-decoration: none;
   border: 1px solid transparent;
 }
-.form-control{
+.form-control {
   height: 45px;
 }
 
@@ -262,8 +271,6 @@ video::-webkit-media-controls {
   -o-transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
 }
-
-
 
 .first-content h4 {
   font-size: 19px;
@@ -285,8 +292,6 @@ video::-webkit-media-controls {
 .first-content .primary-button {
   margin-top: 30px;
 }
-
-
 
 /*
 =======================
@@ -323,11 +328,11 @@ video::-webkit-media-controls {
 }
 
 .second-slide .left-image {
-  padding-right: 0px!important;
+  padding-right: 0px !important;
 }
 
 .second-slide .right-image {
-  padding-left: 0px!important;
+  padding-left: 0px !important;
 }
 
 .second-slide .right-about-text {
@@ -367,8 +372,6 @@ video::-webkit-media-controls {
 .second-slide .left-about-text .primary-button {
   margin-top: 25px;
 }
-
-
 
 /*
 =======================
@@ -449,7 +452,6 @@ video::-webkit-media-controls {
   margin-top: 30px;
 }
 
-
 /*
 =======================
 ----- FOURTH SLIDE ----
@@ -491,7 +493,6 @@ video::-webkit-media-controls {
   width: 100%;
   overflow: hidden;
 }
-
 
 /*
 =======================
@@ -577,7 +578,7 @@ video::-webkit-media-controls {
 }
 
 .fivth-content input:focus {
-  outline: none!important;
+  outline: none !important;
   box-shadow: none;
 }
 
@@ -594,13 +595,13 @@ video::-webkit-media-controls {
   color: #aaa;
   background-color: #f4f4f4;
   border: none;
-  outline: none!important;
+  outline: none !important;
   border-radius: 0;
   box-shadow: none;
 }
 
 .fivth-content textarea:focus {
-  outline: none!important;
+  outline: none !important;
   box-shadow: none;
 }
 
@@ -623,8 +624,6 @@ video::-webkit-media-controls {
   -o-transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
 }
-
-
 
 /*
 =======================
@@ -656,7 +655,7 @@ footer p em {
 }
 
 footer a {
-	color: #343434;
+  color: #343434;
 }
 
 /*
@@ -665,7 +664,7 @@ footer a {
 ========================================
 */
 
-@media (max-width: 850px){
+@media (max-width: 850px) {
   .cd-slider-nav ul li h6 {
     font-size: 13px;
     text-transform: uppercase;
@@ -701,13 +700,13 @@ footer a {
     height: 80px;
     line-height: 80px;
     margin: 0 auto;
-    text-align: center!important;
+    text-align: center !important;
   }
 
   .cd-slider-nav ul {
     padding: 0;
     margin: 0;
-    text-align: center!important;
+    text-align: center !important;
   }
 
   .cd-slider-nav ul li {
@@ -738,7 +737,7 @@ footer a {
 
   .first-content h4 {
     margin-left: 15px;
-    margin-right: 15px; 
+    margin-right: 15px;
   }
 
   .first-content p {
@@ -746,11 +745,11 @@ footer a {
   }
 
   .second-slide .left-image {
-    padding-right: 15px!important;
+    padding-right: 15px !important;
   }
 
   .second-slide .right-image {
-    padding-left: 15px!important;
+    padding-left: 15px !important;
   }
 
   .second-slide .right-about-text {
@@ -770,9 +769,7 @@ footer a {
     margin-top: 30px;
     margin-bottom: 60px;
   }
-
 }
-
 
 /*
 ========================================
@@ -782,7 +779,8 @@ footer a {
 
 /* Preload images */
 body:after {
-  content: url(../img/close.png) url(../img/loading.gif) url(../img/prev.png) url(../img/next.png);
+  content: url(../img/close.png) url(../img/loading.gif) url(../img/prev.png)
+    url(../img/next.png);
   display: none;
 }
 
@@ -841,7 +839,7 @@ body.lb-disable-scrolling {
 }
 
 .lb-outerContainer:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -882,7 +880,8 @@ body.lb-disable-scrolling {
   background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
 }
 
-.lb-prev, .lb-next {
+.lb-prev,
+.lb-next {
   height: 100%;
   cursor: pointer;
   display: block;
@@ -938,7 +937,7 @@ body.lb-disable-scrolling {
 }
 
 .lb-dataContainer:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
