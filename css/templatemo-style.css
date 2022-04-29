@@ -64,11 +64,6 @@ video::-webkit-media-controls {
   -webkit-transition: all 0.2s linear;
 }
 
-.inform-adunit {
-  margin-top: 20px;
-  background-color: #4ae;
-}
-
 .ad-unit-2 {
   display: none;
 }
