@@ -88,129 +88,44 @@
                                 <div class="content first-content" style="padding-bottom: 50px; padding-top: 30px">
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <img src="./img/logo/slpost.jpeg" alt=""
-                                                style="width: 10%; margin-bottom: 20px">
-                                            <h4>Shipping Cost Calculator</h4>
-                                            <div id="loadingUi" style="display: none">
-                                                <img src="./img/loading.gif" alt="">
-                                                <div id="waitingInfo" class="text-center text-info"
-                                                    style="margin-top: 20px; display: none; height: 155px;">
-                                                    <h5 class="text-info">PLease Wait!</h5>
-                                                    <h5>We are fetching recent currency exchange rates from Sri Lanka
-                                                        Central
-                                                        Bank.</h5>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="display: block">
-                                                <div class="">
-                                                    <div id="resultSection" class="col-md-5 col-md-offset-1"
-                                                        style="display: none">
-                                                        <div id="summary" class="text-left"
-                                                            style="padding: 0px 20px 20px 20px; font-size: 40px">
-                                                        </div>
-                                                        <div id="ad-unit-2"></div>
-                                                    </div>
-
-
-                                                    <div id="resultSection2" class="col-md-4 text-left col-md-offset-1"
-                                                        style="display: none; padding:0px 20px 0px 20px;">
-                                                        <h6 class="text-info">Latest currency exchange rates were
-                                                            updated
-                                                            successfully</h6>
-                                                        <h5 class="text-danger" id="ex-rate-display"></h5>
-                                                        <div>
-                                                            <label class="text-left" for="currency2">Convert To</label>
-                                                            <select id="currency2" class="form-control"
-                                                                onchange="updateResults(value)">
-                                                                <option value="0">LKR</option>
-                                                                <option value="1">USD</option>
-                                                                <option value="2">AUD</option>
-                                                                <option value="3">EUR</option>
-                                                                <option value="4">GBP</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="text-center col-xs-12 result-card"
-                                                            style="margin-top: 20px">
-                                                            <h3 id="totalFee" style="font-size: 16px"></h3>
-                                                        </div>
-                                                        <div class="text-center col-xs-12 result-card"
-                                                            style="margin-top: 10px">
-                                                            <h3 id="itemPrice" style="font-size: 16px"></h3>
-                                                        </div>
-
-                                                        <div class="text-center col-xs-12 text-info"
-                                                            style="padding-top: 20px">
-                                                            <a href="" onclick="reload()">Go Back</a>
-                                                        </div>
+                                            <div class="calculator-card">
+                                                <img src="./img/logo/slpost.jpeg" alt=""
+                                                    style="width: 25%; margin-bottom: 20px">
+                                                <h4>Shipping Cost Calculator</h4>
+                                                <div id="loadingUi" style="display: none">
+                                                    <img src="./img/loading.gif" alt="">
+                                                    <div id="waitingInfo" class="text-center text-info"
+                                                        style="margin-top: 20px; display: none; height: 155px;">
+                                                        <h5 class="text-info">PLease Wait!</h5>
+                                                        <h5>We are fetching recent currency exchange rates from Sri
+                                                            Lanka
+                                                            Central
+                                                            Bank.</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="container-fluid" id="detailForm">
-                                                <form id="calculator" class="was-validated">
-                                                    <div class="row">
-                                                        <div class="text-center col-md-4 col-md-offset-1">
-                                                            <div>
-                                                                <label class="text-left" for="fromCountry">From</label>
-                                                                <input name="fromCountry" id="fromCountry" type="text"
-                                                                    value="Sri Lanka" readonly required
-                                                                    class="form-control">
+                                                <div class="row" style="display: block">
+                                                    <div class="">
+                                                        <div id="resultSection" class="col-md-5 col-md-offset-1"
+                                                            style="display: none">
+                                                            <div id="summary" class="text-left"
+                                                                style="padding: 0px 20px 20px 20px; font-size: 40px">
                                                             </div>
-
-                                                            <div style="margin-top: 20px">
-                                                                <label class="text-center" for="toCountry">To</label>
-                                                                <input name="toCountry" id="toCountry"
-                                                                    class="form-control" list="countryList" required>
-                                                                <datalist id="countryList"></datalist>
-                                                                <div class="text-left">
-                                                                    <small id="validate-country"
-                                                                        style="color: red; display: none">Please select
-                                                                        a valid
-                                                                        country</small>
-                                                                </div>
-                                                            </div>
-
-                                                            <div style="margin-top: 20px">
-                                                                <label class="text-left" for="weight">Total
-                                                                    Weight(gram)</label>
-                                                                <input name="weight" id="weight" type="number" required
-                                                                    class="form-control">
-                                                                <div class="text-left">
-                                                                    <small id="validate-weight"
-                                                                        style="color: red; display: none">Weight cannot
-                                                                        be
-                                                                        empty</small>
-                                                                </div>
-                                                            </div>
-
-                                                            <div style="margin-top: 20px">
-                                                                <div><label for="isRegistered"> Registered Post</label>
-                                                                </div>
-                                                                <div><input type="checkbox" checked id="isRegistered"
-                                                                        name="isRegistered"
-                                                                        style="height: 40px; width: 40px;">
-                                                                </div>
-                                                            </div>
+                                                            <div id="ad-unit-2"></div>
                                                         </div>
-                                                        <div class="text-center col-md-4 col-md-offset-2 expense">
+
+
+                                                        <div id="resultSection2"
+                                                            class="col-md-4 text-left col-md-offset-1"
+                                                            style="display: none; padding:0px 20px 0px 20px;">
+                                                            <h6 class="text-info">Latest currency exchange rates were
+                                                                updated
+                                                                successfully</h6>
+                                                            <h5 class="text-danger" id="ex-rate-display"></h5>
                                                             <div>
-                                                                <label class="text-left" for="expense">Expense
-                                                                    (Optional)</label>
-                                                                <input name="expense" id="expense" placeholder="0"
-                                                                    type="number" class="form-control">
-                                                            </div>
-                                                            <div style="margin-top: 20px">
-                                                                <label class="text-left" for="expected_profit">Expected
-                                                                    Profit
-                                                                    (optional)</label>
-                                                                <input name="expected_profit" placeholder="0"
-                                                                    id="expected_profit" type="number"
-                                                                    class="form-control">
-                                                            </div>
-                                                            <div style="margin-top: 20px">
-                                                                <label class="text-left" for="currency">Convert
+                                                                <label class="text-left" for="currency2">Convert
                                                                     To</label>
-                                                                <select name="currency" id="currency"
-                                                                    class="form-control">
+                                                                <select id="currency2" class="form-control"
+                                                                    onchange="updateResults(value)">
                                                                     <option value="0">LKR</option>
                                                                     <option value="1">USD</option>
                                                                     <option value="2">AUD</option>
@@ -218,18 +133,117 @@
                                                                     <option value="4">GBP</option>
                                                                 </select>
                                                             </div>
+                                                            <div class="text-center col-xs-12 result-card"
+                                                                style="margin-top: 20px">
+                                                                <h3 id="totalFee" style="font-size: 16px"></h3>
+                                                            </div>
+                                                            <div class="text-center col-xs-12 result-card"
+                                                                style="margin-top: 10px">
+                                                                <h3 id="itemPrice" style="font-size: 16px"></h3>
+                                                            </div>
+
+                                                            <div class="text-center col-xs-12 text-info"
+                                                                style="padding-top: 20px">
+                                                                <a href="" onclick="reload()">Go Back</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="text-center col-md-4 col-md-offset-4"
-                                                        style="margin-top: 20px;">
-                                                        <div class="">
-                                                            <button class="btn-primary-custom" type="submit"
-                                                                onclick="calculateFee()" id="calForm-submit">Calculate
-                                                            </button>
+                                                </div>
+                                                <div class="container-fluid" id="detailForm">
+                                                    <form id="calculator" class="was-validated">
+                                                        <div class="row">
+                                                            <div class="text-center col-md-4 col-md-offset-1">
+                                                                <div>
+                                                                    <label class="text-left"
+                                                                        for="fromCountry">From</label>
+                                                                    <input name="fromCountry" id="fromCountry"
+                                                                        type="text" value="Sri Lanka" readonly required
+                                                                        class="form-control">
+                                                                </div>
+
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-center"
+                                                                        for="toCountry">To</label>
+                                                                    <input name="toCountry" id="toCountry"
+                                                                        class="form-control" list="countryList"
+                                                                        required>
+                                                                    <datalist id="countryList"></datalist>
+                                                                    <div class="text-left">
+                                                                        <small id="validate-country"
+                                                                            style="color: red; display: none">Please
+                                                                            select
+                                                                            a valid
+                                                                            country</small>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-left" for="weight">Total
+                                                                        Weight(gram)</label>
+                                                                    <input name="weight" id="weight" type="number"
+                                                                        required class="form-control">
+                                                                    <div class="text-left">
+                                                                        <small id="validate-weight"
+                                                                            style="color: red; display: none">Weight
+                                                                            cannot
+                                                                            be
+                                                                            empty</small>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div style="margin-top: 20px">
+                                                                    <div><label for="isRegistered"> Registered
+                                                                            Post</label>
+                                                                    </div>
+                                                                    <div><input type="checkbox" checked
+                                                                            id="isRegistered" name="isRegistered"
+                                                                            style="height: 40px; width: 40px;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="text-center col-md-4 col-md-offset-2 expense">
+                                                                <div>
+                                                                    <label class="text-left" for="expense">Expense
+                                                                        (Optional)</label>
+                                                                    <input name="expense" id="expense" placeholder="0"
+                                                                        type="number" class="form-control">
+                                                                </div>
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-left"
+                                                                        for="expected_profit">Expected
+                                                                        Profit
+                                                                        (optional)</label>
+                                                                    <input name="expected_profit" placeholder="0"
+                                                                        id="expected_profit" type="number"
+                                                                        class="form-control">
+                                                                </div>
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-left" for="currency">Convert
+                                                                        To</label>
+                                                                    <select name="currency" id="currency"
+                                                                        class="form-control">
+                                                                        <option value="0">LKR</option>
+                                                                        <option value="1">USD</option>
+                                                                        <option value="2">AUD</option>
+                                                                        <option value="3">EUR</option>
+                                                                        <option value="4">GBP</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </form>
+                                                        <div class="text-center col-md-4 col-md-offset-4"
+                                                            style="margin-top: 20px;">
+                                                            <div class="">
+                                                                <button class="btn-primary-custom" type="submit"
+                                                                    onclick="calculateFee()"
+                                                                    id="calForm-submit">Calculate
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
+
 
                                             <div class="row">
                                                 <div class="container text-center" style="margin-top: 40px">
