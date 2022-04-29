@@ -6,27 +6,29 @@
 <!--[if IE 8]>
 <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang=""> <!--<![endif]-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-076RQHND0J"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-076RQHND0J');
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9003533674874516"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="icon" type="image/png" href="./img/favicon.png"/>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
     <title>Sri Lanka Post Shipping Cost and Postal Rates Calculator Free</title>
     <meta name="description"
-          content="ShippingCal is a free calculator for calculating shipping cost and postal charges for Sri Lanka Post International Air Mail Service">
+        content="ShippingCal is a free calculator for calculating shipping cost and postal charges for Sri Lanka Post International Air Mail Service">
     <meta name="keywords"
-          content="Sri Lanka Post, Sri Lanka Post Shipping Cost, SL Post Shipping Cost, shipping cost calculator sri lanka, Sri Lanka post postal fee calculator">
+        content="Sri Lanka Post, Sri Lanka Post Shipping Cost, SL Post Shipping Cost, shipping cost calculator sri lanka, Sri Lanka post postal fee calculator">
     <meta name="author" content="Dhahas Technologies">
     <!--
     Newline Template
@@ -42,195 +44,246 @@
     <link rel="stylesheet" href="css/templatemo-style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
-          rel="stylesheet">
+        rel="stylesheet">
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
+
 <body>
 
-<div class="overlay"></div>
-<section class="top-part">
-    <img src="img/cover.jpg" alt="" style="object-fit: cover; height: 100%">
-</section>
+    <div class="overlay"></div>
+    <section class="top-part">
+        <img src="img/cover.jpg" alt="" style="object-fit: cover; height: 100%">
+    </section>
 
-<section class="cd-hero">
+    <section class="cd-hero">
 
-    <div class="cd-slider-nav">
-        <nav>
-            <span class="cd-marker item-1"></span>
-            <ul>
-                <li class="selected"><a href="index.html">
-                    <div class="image-icon"><img src="img/home-icon.png"></div>
-                    <h6>Home</h6></a></li>
+        <div class="cd-slider-nav">
+            <nav>
+                <span class="cd-marker item-1"></span>
+                <ul>
+                    <li class="selected"><a href="index.html">
+                            <div class="image-icon"><img src="img/home-icon.png"></div>
+                            <h6>Home</h6>
+                        </a></li>
 
-                <li><a href="contact-us.html">
-                    <div class="image-icon"><img src="img/contact-icon.png"></div>
-                    <h6>Contact Us</h6></a></li>
-            </ul>
-        </nav>
-    </div> <!-- .cd-slider-nav -->
+                    <li><a href="contact-us.html">
+                            <div class="image-icon"><img src="img/contact-icon.png"></div>
+                            <h6>Contact Us</h6>
+                        </a></li>
+                </ul>
+            </nav>
+        </div> <!-- .cd-slider-nav -->
 
-    <ul class="cd-hero-slider">
-        <li class="selected">
-            <div class="heading">
-                <h1>SHIPPINGCAL</h1>
-                <span>Welcome to ShippingCal Tool</span>
-            </div>
-            <div class="cd-full-width first-slide">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="content first-content" style="padding-bottom: 50px; padding-top: 30px">
-                                <img src="./img/logo/slpost.jpeg" alt="" style="width: 10%; margin-bottom: 20px">
-                                <h4>Shipping Cost Calculator</h4>
-                                <div id="loadingUi" style="display: none">
-                                    <img src="./img/loading.gif" alt="">
-                                    <div id="waitingInfo" class="container text-center text-info"
-                                         style="margin-top: 20px; display: none">
-                                        <h5 class="text-info">PLease Wait!</h5>
-                                        <h5>We are fetching today currency exchange rates from Sri Lanka central
-                                            bank.</h5>
-                                    </div>
-                                </div>
-                                <div class="row" style="display: block">
-                                    <div class="container">
-                                        <div id="resultSection" class="col-md-4 col-md-offset-2" style="display: none">
-                                            <div id="summary" class="text-left"
-                                                 style="padding: 0px 20px 20px 20px; font-size: 40px">
-                                            </div>
-                                            
-                                        </div>
-                                        
-
-                                        <div id="resultSection2" class="col-md-4 text-left"
-                                             style="display: none; padding:0px 20px 0px 20px;">
-                                            <h6 class="text-info">Latest currency exchange rates were updated
-                                                successfully</h6>
-                                            <div>
-                                                <label class="text-left" for="currency2">Convert To</label>
-                                                <select id="currency2" class="form-control"
-                                                        onchange="updateResults(value)">
-                                                    <option value="0">LKR</option>
-                                                    <option value="1">USD</option>
-                                                    <option value="2">AUD</option>
-                                                    <option value="3">EUR</option>
-                                                    <option value="4">GBP</option>
-                                                </select>
-                                            </div>
-                                            <div class="text-center col-xs-12 result-card" style="margin-top: 20px">
-                                                <h3 id="totalFee" style="font-size: 16px"></h3>
-                                            </div>
-                                            <div class="text-center col-xs-12 result-card" style="margin-top: 10px">
-                                                <h3 id="itemPrice" style="font-size: 16px"></h3>
-                                            </div>
-                                        
-                                            <div class="text-center col-xs-12 text-info" style="padding-top: 20px">
-                                                <a href="" onclick="reload()">Go Back</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="container-fluid" id="detailForm">
-                                    <form id="calculator" class="was-validated">
-                                        <div class="row">
-                                            <div class="text-center col-md-4 col-md-offset-1">
-                                                <div>
-                                                    <label class="text-left" for="fromCountry">From</label>
-                                                    <input name="fromCountry" id="fromCountry" type="text"
-                                                           value="Sri Lanka"
-                                                           readonly required class="form-control">
+        <ul class="cd-hero-slider">
+            <li class="selected">
+                <div class="heading">
+                    <h1>SHIPPINGCAL</h1>
+                    <span>Welcome to ShippingCal Tool</span>
+                </div>
+                <div class="cd-full-width first-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="content first-content" style="padding-bottom: 50px; padding-top: 30px">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <img src="./img/logo/slpost.jpeg" alt=""
+                                                style="width: 10%; margin-bottom: 20px">
+                                            <h4>Shipping Cost Calculator</h4>
+                                            <div id="loadingUi" style="display: none">
+                                                <img src="./img/loading.gif" alt="">
+                                                <div id="waitingInfo" class="text-center text-info"
+                                                    style="margin-top: 20px; display: none; height: 155px;">
+                                                    <h5 class="text-info">PLease Wait!</h5>
+                                                    <h5>We are fetching recent currency exchange rates from Sri Lanka
+                                                        Central
+                                                        Bank.</h5>
                                                 </div>
+                                            </div>
+                                            <div class="row" style="display: block">
+                                                <div class="">
+                                                    <div id="resultSection" class="col-md-5 col-md-offset-1"
+                                                        style="display: none">
+                                                        <div id="summary" class="text-left"
+                                                            style="padding: 0px 20px 20px 20px; font-size: 40px">
+                                                        </div>
+                                                        <div id="ad-unit-2"></div>
+                                                    </div>
 
-                                                <div style="margin-top: 20px">
-                                                    <label class="text-center" for="toCountry">To</label>
-                                                    <input name="toCountry" id="toCountry" class="form-control"
-                                                           list="countryList" required>
-                                                    <datalist id="countryList"></datalist>
-                                                    <div class="text-left">
-                                                        <small id="validate-country" style="color: red; display: none">Please select a valid country</small>
+
+                                                    <div id="resultSection2" class="col-md-4 text-left col-md-offset-1"
+                                                        style="display: none; padding:0px 20px 0px 20px;">
+                                                        <h6 class="text-info">Latest currency exchange rates were
+                                                            updated
+                                                            successfully</h6>
+                                                        <h5 class="text-danger" id="ex-rate-display"></h5>
+                                                        <div>
+                                                            <label class="text-left" for="currency2">Convert To</label>
+                                                            <select id="currency2" class="form-control"
+                                                                onchange="updateResults(value)">
+                                                                <option value="0">LKR</option>
+                                                                <option value="1">USD</option>
+                                                                <option value="2">AUD</option>
+                                                                <option value="3">EUR</option>
+                                                                <option value="4">GBP</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="text-center col-xs-12 result-card"
+                                                            style="margin-top: 20px">
+                                                            <h3 id="totalFee" style="font-size: 16px"></h3>
+                                                        </div>
+                                                        <div class="text-center col-xs-12 result-card"
+                                                            style="margin-top: 10px">
+                                                            <h3 id="itemPrice" style="font-size: 16px"></h3>
+                                                        </div>
+
+                                                        <div class="text-center col-xs-12 text-info"
+                                                            style="padding-top: 20px">
+                                                            <a href="" onclick="reload()">Go Back</a>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="container-fluid" id="detailForm">
+                                                <form id="calculator" class="was-validated">
+                                                    <div class="row">
+                                                        <div class="text-center col-md-4 col-md-offset-1">
+                                                            <div>
+                                                                <label class="text-left" for="fromCountry">From</label>
+                                                                <input name="fromCountry" id="fromCountry" type="text"
+                                                                    value="Sri Lanka" readonly required
+                                                                    class="form-control">
+                                                            </div>
 
-                                                <div style="margin-top: 20px">
-                                                    <label class="text-left" for="weight">Total Weight(gram)</label>
-                                                    <input name="weight" id="weight" type="number" required
-                                                           class="form-control">
-                                                    <div class="text-left">
-                                                        <small id="validate-weight" style="color: red; display: none">Weight cannot be empty</small>
+                                                            <div style="margin-top: 20px">
+                                                                <label class="text-center" for="toCountry">To</label>
+                                                                <input name="toCountry" id="toCountry"
+                                                                    class="form-control" list="countryList" required>
+                                                                <datalist id="countryList"></datalist>
+                                                                <div class="text-left">
+                                                                    <small id="validate-country"
+                                                                        style="color: red; display: none">Please select
+                                                                        a valid
+                                                                        country</small>
+                                                                </div>
+                                                            </div>
+
+                                                            <div style="margin-top: 20px">
+                                                                <label class="text-left" for="weight">Total
+                                                                    Weight(gram)</label>
+                                                                <input name="weight" id="weight" type="number" required
+                                                                    class="form-control">
+                                                                <div class="text-left">
+                                                                    <small id="validate-weight"
+                                                                        style="color: red; display: none">Weight cannot
+                                                                        be
+                                                                        empty</small>
+                                                                </div>
+                                                            </div>
+
+                                                            <div style="margin-top: 20px">
+                                                                <div><label for="isRegistered"> Registered Post</label>
+                                                                </div>
+                                                                <div><input type="checkbox" checked id="isRegistered"
+                                                                        name="isRegistered"
+                                                                        style="height: 40px; width: 40px;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center col-md-4 col-md-offset-2 expense">
+                                                            <div>
+                                                                <label class="text-left" for="expense">Expense
+                                                                    (Optional)</label>
+                                                                <input name="expense" id="expense" placeholder="0"
+                                                                    type="number" class="form-control">
+                                                            </div>
+                                                            <div style="margin-top: 20px">
+                                                                <label class="text-left" for="expected_profit">Expected
+                                                                    Profit
+                                                                    (optional)</label>
+                                                                <input name="expected_profit" placeholder="0"
+                                                                    id="expected_profit" type="number"
+                                                                    class="form-control">
+                                                            </div>
+                                                            <div style="margin-top: 20px">
+                                                                <label class="text-left" for="currency">Convert
+                                                                    To</label>
+                                                                <select name="currency" id="currency"
+                                                                    class="form-control">
+                                                                    <option value="0">LKR</option>
+                                                                    <option value="1">USD</option>
+                                                                    <option value="2">AUD</option>
+                                                                    <option value="3">EUR</option>
+                                                                    <option value="4">GBP</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-
-                                                <div style="margin-top: 20px">
-                                                    <div><label for="isRegistered"> Registered Post</label></div>
-                                                    <div><input type="checkbox" checked id="isRegistered"
-                                                                name="isRegistered"
-                                                                style="height: 40px; width: 40px;"></div>
-                                                </div>
+                                                    <div class="text-center col-md-4 col-md-offset-4"
+                                                        style="margin-top: 20px;">
+                                                        <div class="">
+                                                            <button class="btn-primary-custom" type="submit"
+                                                                onclick="calculateFee()" id="calForm-submit">Calculate
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <div class="text-center col-md-4 col-md-offset-2 expense">
-                                                <div>
-                                                    <label class="text-left" for="expense">Expense (Optional)</label>
-                                                    <input name="expense" id="expense" placeholder="0" type="number"
-                                                           class="form-control">
-                                                </div>
-                                                <div style="margin-top: 20px">
-                                                    <label class="text-left" for="expected_profit">Expected Profit
-                                                        (optional)</label>
-                                                    <input name="expected_profit" placeholder="0" id="expected_profit"
-                                                           type="number"
-                                                           class="form-control">
-                                                </div>
-                                                <div style="margin-top: 20px">
-                                                    <label class="text-left" for="currency">Convert To</label>
-                                                    <select name="currency" id="currency" class="form-control">
-                                                        <option value="0">LKR</option>
-                                                        <option value="1">USD</option>
-                                                        <option value="2">AUD</option>
-                                                        <option value="3">EUR</option>
-                                                        <option value="4">GBP</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center col-md-4 col-md-offset-4" style="margin-top: 20px;">
                                             <div class="">
-                                                <button class="btn-primary-custom" type="submit"
-                                                        onclick="calculateFee()"
-                                                        id="calForm-submit">Calculate
-                                                </button>
+                                                <div class="inform-adunit">
+                                                    <script async
+                                                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9003533674874516"
+                                                        crossorigin="anonymous"></script>
+                                                    <!-- inform-ad -->
+                                                    <ins class="adsbygoogle" style="display:block"
+                                                        data-ad-client="ca-pub-9003533674874516"
+                                                        data-ad-slot="3314689168" data-ad-format="auto"
+                                                        data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script>
+                                                </div>
+                                                <div class="text-center">Advertisement</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="container text-center" style="margin-top: 40px">
+                                                    <div class="col-md-3 col-xs-6">
+                                                        <img src="./img/logo/ebay-logo.png" alt="" style="width: 80%">
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-6">
+                                                        <img src="./img/logo/Shopify-Logo.png" alt=""
+                                                            style="width: 80%">
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-6">
+                                                        <img src="./img/logo/WooCommerce_logo.png" alt=""
+                                                            style="width: 80%">
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-6">
+                                                        <img src="./img/logo/etsy.png" alt="" style="width: 80%">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="inform-adunit">
-                                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9003533674874516"
-                                                crossorigin="anonymous"></script>
-                                            <!-- inform-ad -->
-                                            <ins class="adsbygoogle"
-                                                style="display:block"
-                                                data-ad-client="ca-pub-9003533674874516"
-                                                data-ad-slot="3314689168"
-                                                data-ad-format="auto"
-                                                data-full-width-responsive="true"></ins>
-                                            <script>
-                                                (adsbygoogle = window.adsbygoogle || []).push({});
-                                            </script>
-                                        </div>
-                                        <div class="text-center">Advertisement</div>
-
-                                    </form>
-                                </div>
-                                <div class="row">
-                                    <div class="container text-center" style="margin-top: 40px">
-                                        <div class="col-md-3 col-xs-6">
-                                            <img src="./img/logo/ebay-logo.png" alt="" style="width: 80%">
-                                        </div>
-                                        <div class="col-md-3 col-xs-6">
-                                            <img src="./img/logo/Shopify-Logo.png" alt="" style="width: 80%">
-                                        </div>
-                                        <div class="col-md-3 col-xs-6">
-                                            <img src="./img/logo/WooCommerce_logo.png" alt="" style="width: 80%">
-                                        </div>
-                                        <div class="col-md-3 col-xs-6">
-                                            <img src="./img/logo/etsy.png" alt="" style="width: 80%">
+                                        <div class="col-md-3">
+                                            <div class="text-center bg-info ad-unit-2">
+                                                Advertisement
+                                                <div>
+                                                    <script async
+                                                        src="
+                                                https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9003533674874516"
+                                                        crossorigin="anonymous">
+                                                        </script>
+                                                    <!-- result-page-adunit2 -->
+                                                    <ins class="adsbygoogle" style="display:block"
+                                                        data-ad-client="ca-pub-9003533674874516"
+                                                        data-ad-slot="9534297366" data-ad-format="auto"
+                                                        data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -238,41 +291,59 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
-        </li>
-    </ul> <!-- .cd-hero-slider -->
-</section> <!-- .cd-hero -->
-<div class="cd-half-width third-slide">
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="">
-                    <div class="row">
-                        <div class="col-md-7 left-image">
-                            <img src="img/left-feature-image.jpg" style="width: 100%">
-                        </div>
-                        <div class="col-md-5">
-                            <div class="right-feature-text">
-                                <h4>Shipping Cost Calculator</h4>
-                                <p>This tool is for calculate the shipping cost for international sri lankan air mail.
-                                    You can easily find the postal fee by using this tool. All the calculations are done
-                                    according
-                                    to the latest sri lankan post shipping rates. You can download the shipping rates
-                                    file from the below link.
-                                    Please feel free to contact us if any calculation performs wrong.</p>
-                                <div class="feature-list">
-                                    <ul>
-                                        <p>- Fast and reliable</p>
-                                        <p>- No login and totally free</p>
-                                        <p>- Based on latest mail rates in Sri Lanka</p>
-                                        <p>- Light weight and responsive</p>
-                                    </ul>
-                                </div>
-                                <div class="primary-button">
-                                    <a href="files/shipping_rates.pdf" target="_blank" rel="noopener noreferrer">Download
-                                        Mail Rates</a>
+                </div>
+            </li>
+        </ul> <!-- .cd-hero-slider -->
+    </section> <!-- .cd-hero -->
+    <div class="cd-half-width third-slide">
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-7 left-image">
+                                <img src="img/left-feature-image.jpg" style="width: 100%">
+                            </div>
+                            <div class="col-md-5">
+                                <div class="right-feature-text">
+                                    <h4>Shipping Cost Calculator</h4>
+                                    <p>This tool is for calculate the shipping cost for international sri lankan air
+                                        mail.
+                                        You can easily find the postal fee by using this tool. All the calculations are
+                                        done
+                                        according
+                                        to the latest sri lankan post shipping rates. You can download the shipping
+                                        rates
+                                        file from the below link.
+                                        Please feel free to contact us if any calculation performs wrong.</p>
+                                    <div class="feature-list">
+                                        <ul>
+                                            <p>- Fast and reliable</p>
+                                            <p>- No login and totally free</p>
+                                            <p>- Based on latest mail rates in Sri Lanka</p>
+                                            <p>- Light weight and responsive</p>
+                                        </ul>
+                                    </div>
+                                    <div class="text-center bg-danger">
+                                        <script async
+                                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9003533674874516"
+                                            crossorigin="anonymous"></script>
+                                        <!-- result-page-adunit -->
+                                        <ins class="adsbygoogle" style="display:block"
+                                            data-ad-client="ca-pub-9003533674874516" data-ad-slot="6709641711"
+                                            data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
+                                    <div class="text-center">Advertisement</div>
+                                    <br>
+                                    <div class="primary-button">
+                                        <a href="files/shipping_rates.pdf" target="_blank"
+                                            rel="noopener noreferrer">Download
+                                            Mail Rates</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -280,24 +351,24 @@
                 </div>
             </div>
         </div>
+        <br><br>
     </div>
-    <br><br>
-</div>
 
-<footer>
-    <div class="text-center" style="padding-top: 25px">
-        <a href="termsandconditions.html" style="margin-left: 15px">Terms and Conditions</a>
-        <a href="privacy-policy.html" style="margin-left: 15px">Privacy Policy</a>
-    </div>
-    <p style="padding-top: 0px">Copyright &copy; 2021 www.shippingcal.com
+    <footer>
+        <div class="text-center" style="padding-top: 25px">
+            <a href="termsandconditions.html" style="margin-left: 15px">Terms and Conditions</a>
+            <a href="privacy-policy.html" style="margin-left: 15px">Privacy Policy</a>
+        </div>
+        <p style="padding-top: 0px">Copyright &copy; 2021 www.shippingcal.com
 
-        | Powered by <em>Dhahas Technologies</em></p>
-</footer>
+            | Powered by <em>Dhahas Technologies</em></p>
+    </footer>
 
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/main.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
