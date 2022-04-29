@@ -74,6 +74,18 @@ video::-webkit-media-controls {
   }
 }
 
+.result-page-adunit {
+  display: none;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .result-page-adunit {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
 .cd-hero {
   z-index: 2;
   position: relative;
