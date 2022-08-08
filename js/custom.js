@@ -1050,7 +1050,9 @@ function displayResults(
   ).innerHTML = `Total Item Price: ${convertedItemPrice}`;
   document.getElementById('loadingUi').style.display = 'none';
   document.getElementById('currency2').value = currency;
-  document.getElementById('ex-rate-display').innerHTML = `1 ${exchangeRates[currency].currency} = ${exchangeRates[currency].fromLkr.toFixed(2)} LKR`;
+  document.getElementById('ex-rate-display').innerHTML = `1 ${
+    exchangeRates[currency].currency
+  } = ${exchangeRates[currency].fromLkr.toFixed(2)} LKR`;
   document.getElementById('resultSection').style.display = 'block';
   document.getElementById('resultSection2').style.display = 'block';
 }
@@ -1116,7 +1118,9 @@ function updateResults(value) {
   let currency = value;
   let convertedPostalFee = convertCurrency(total, currency);
   let convertedItemPrice = convertCurrency(itemPrice, currency);
-  document.getElementById('ex-rate-display').innerHTML = `1 ${exchangeRates[currency].currency} = ${(1/exchangeRates[currency].fromLkr).toFixed(2)} LKR`;
+  document.getElementById('ex-rate-display').innerHTML = `1 ${
+    exchangeRates[currency].currency
+  } = ${(1 / exchangeRates[currency].fromLkr).toFixed(2)} LKR`;
 
   document.getElementById(
     'totalFee'
@@ -1208,3 +1212,5 @@ function extractCurrency(currency, currencyRegex, text) {
   };
   return obj;
 }
+
+setCountry();

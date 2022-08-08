@@ -1,0 +1,543 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- To Do: Needs to add new google tag for analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-076RQHND0J"></script> -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+
+    <!-- Site title for seo -->
+    <title>Sri Lanka Post Shipping Cost and Postal Rates Calculator Free</title>
+
+    <!-- Site description -->
+    <meta name="description"
+        content="ShippingCal is a free calculator for calculating shipping cost and postal charges for Sri Lanka Post International Air Mail Service">
+
+    <!-- Site Keywords -->
+    <meta name="keywords"
+        content="Sri Lanka Post, Sri Lanka Post Shipping Cost, SL Post Shipping Cost, shipping cost calculator sri lanka, Sri Lanka post postal fee calculator">
+    <meta name="author" content="Dhahas Technologies">
+    <!--
+    Newline Template
+    https://templatemo.com/tm-503-newline
+    -->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+    <section class="top-part">
+        <img src="img/cover.jpg" alt="" style="object-fit: cover; height: 100%">
+    </section>
+
+    <section class="cd-hero">
+
+        <div class="cd-slider-nav">
+            <nav>
+                <span class="cd-marker item-1"></span>
+                <ul>
+                    <li class="selected"><a href="index.html">
+                            <div class="image-icon"><img src="img/home-icon.png"></div>
+                            <h6>Home</h6>
+                        </a></li>
+
+                    <li><a href="contact-us.html">
+                            <div class="image-icon"><img src="img/contact-icon.png"></div>
+                            <h6>Contact Us</h6>
+                        </a></li>
+                </ul>
+            </nav>
+        </div> <!-- .cd-slider-nav -->
+
+        <ul class="cd-hero-slider">
+            <li class="selected">
+                <div class="heading">
+                    <h1>SHIPPINGCAL</h1>
+                    <span>Welcome to Ebay Fee Calculator Tool</span>
+                </div>
+                <div class="cd-full-width first-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="content first-content" style="padding-bottom: 50px; padding-top: 30px">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="calculator-card">
+                                                <!-- <img src="./img/logo/slpost.jpeg" alt=""
+                                                    style="width: 25%; margin-bottom: 20px"> -->
+                                                <h4>Ebay Final Fee Calculator</h4>
+
+                                                <!-- Loading UI -->
+                                                <div id="loadingUi" style="display: none">
+                                                    <img src="./img/loading.gif" alt="">
+                                                    <div id="waitingInfo" class="text-center text-info"
+                                                        style="margin-top: 20px; display: none; height: 155px;">
+                                                        <h5 class="text-info">PLease Wait!</h5>
+                                                        <h5>We are fetching recent currency exchange rates from Sri
+                                                            Lanka
+                                                            Central
+                                                            Bank.</h5>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Resultes UI -->
+                                                <div class="row" style="display: block">
+                                                    <div class="">
+                                                        <div id="resultSection" class="col-md-5 col-md-offset-1"
+                                                            style="display: none">
+                                                            <div id="summary" class="text-left"
+                                                                style="padding: 0px 20px 20px 20px; font-size: 40px">
+                                                            </div>
+                                                            <div id="ad-unit-2"></div>
+                                                        </div>
+
+
+                                                        <div id="resultSection2"
+                                                            class="col-md-4 text-left col-md-offset-1"
+                                                            style="display: none; padding:0px 20px 0px 20px;">
+                                                            <h6 class="text-info">Latest currency exchange rates were
+                                                                updated
+                                                                successfully</h6>
+                                                            <h5 class="text-danger" id="ex-rate-display"></h5>
+                                                            <div>
+                                                                <label class="text-left" for="currency2">Convert
+                                                                    To</label>
+                                                                <select id="currency2" class="form-control"
+                                                                    onchange="updateResults(value)">
+                                                                    <option value="0">LKR</option>
+                                                                    <option value="1">USD</option>
+                                                                    <option value="2">AUD</option>
+                                                                    <option value="3">EUR</option>
+                                                                    <option value="4">GBP</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="text-center col-xs-12 result-card"
+                                                                style="margin-top: 20px">
+                                                                <h3 id="totalFee" style="font-size: 16px"></h3>
+                                                            </div>
+                                                            <div class="text-center col-xs-12 result-card"
+                                                                style="margin-top: 10px">
+                                                                <h3 id="itemPrice" style="font-size: 16px"></h3>
+                                                            </div>
+
+                                                            <div class="text-center col-xs-12 text-info"
+                                                                style="padding-top: 20px">
+                                                                <a href="" onclick="reload()">Go Back</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Calculator UI -->
+                                                <div class="container-fluid" id="detailForm">
+                                                    <form id="calculator" class="was-validated">
+                                                        <div class="row">
+                                                            <div class="text-center col-md-4 col-md-offset-1">
+
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-left" for="item-cost">Item
+                                                                        Cost </label>
+                                                                    <input name="item-cost" id="item-cost" type="number"
+                                                                        required class="form-control" placeholder="0"
+                                                                        onkeyup="calculateFinalFee()">
+                                                                    <div class="text-left">
+                                                                        <small id="validate-item-cost"
+                                                                            style="color: red; display: none">Item Cost
+                                                                            cannot
+                                                                            be
+                                                                            empty</small>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-left" for="profit">Expected
+                                                                        Profit</label>
+                                                                    <input name="profit" id="profit" placeholder="0"
+                                                                        type="number" required
+                                                                        onkeyup="calculateFinalFee()"
+                                                                        class="form-control">
+                                                                    <div class="text-left">
+                                                                        <small id="validate-profit"
+                                                                            style="color: red; display: none">Expected
+                                                                            Profit
+                                                                            cannot
+                                                                            be
+                                                                            empty</small>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-left"
+                                                                        for="shipping-charges">Shipping Charges
+                                                                        (Optional)</label>
+                                                                    <input name="shipping-charges" id="shipping-charges"
+                                                                        type="number" class="form-control"
+                                                                        onkeyup="calculateFinalFee()" placeholder="0">
+                                                                </div>
+
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-center" for="category">Category
+                                                                        (Optional)</label>
+                                                                    <select id="category" class="form-control"
+                                                                        onchange="calculateFinalFee()"></select>
+                                                                    <div class="text-left">
+                                                                        <small id="validate-category"
+                                                                            style="color: red; display: none">Please
+                                                                            select
+                                                                            a valid
+                                                                            category</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="text-center col-md-4 col-md-offset-2 expense">
+                                                                <div style="margin-top: 20px">
+                                                                    <label class="text-left"
+                                                                        for="currency">Currency</label>
+                                                                    <select name="currency" id="currency"
+                                                                        class="form-control">
+                                                                        <option value="0">USD (US Dollar)</option>
+                                                                        <option value="1">AUD (Australian Dollar)
+                                                                        </option>
+                                                                        <option value="2">EUR (Euro)</option>
+                                                                        <option value="3">GBP (British Pound)</option>
+                                                                        <option value="4">LKR (Sri Lankan Rupee)
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <!-- Optional fields  check boxes-->
+                                                                <div>
+                                                                    <div class="text-center" style="margin-top: 30px;">
+                                                                        <h5> <strong>More Options</strong> </h3>
+                                                                    </div>
+                                                                    <div style="margin-top: 10px">
+                                                                        <div class="text-left">
+                                                                            <div style=" display: flex;
+                                                                                    justify-content: left;">
+                                                                                <input type="checkbox" id="ebay-store"
+                                                                                    name="ebay-store"
+                                                                                    style="height: 22px; width: 22px; margin-right: 10px;">
+                                                                                <label for="ebay-store"
+                                                                                    style=" display: block; padding-top: 5px; font-weight: 600;">eBay
+                                                                                    Store (Basic or
+                                                                                    higher)</label>
+                                                                            </div>
+
+                                                                            <div style=" display: flex;
+                                                                                    justify-content: left;">
+                                                                                <input type="checkbox" id="top-rated"
+                                                                                    name="top-rated"
+                                                                                    style="height: 22px; width: 22px; margin-right: 10px;">
+                                                                                <label for="top-rated"
+                                                                                    style=" display: block; padding-top: 5px; font-weight: 600;">Top
+                                                                                    Rated Seller</label>
+                                                                            </div>
+
+                                                                            <div style=" display: flex;
+                                                                                    justify-content: left;">
+                                                                                <input type="checkbox"
+                                                                                    id="below-standard"
+                                                                                    name="below-standard"
+                                                                                    style="height: 22px; width: 22px; margin-right: 10px;">
+                                                                                <label for="below-standard"
+                                                                                    style=" display: block; padding-top: 5px; font-weight: 600;">Below
+                                                                                    Standard Seller</label>
+                                                                            </div>
+
+                                                                            <div style=" display: flex;
+                                                                                    justify-content: left;">
+                                                                                <input type="checkbox"
+                                                                                    id="international-fee"
+                                                                                    name="international-fee"
+                                                                                    style="height: 22px; width: 22px; margin-right: 10px;">
+                                                                                <label for="international-fee"
+                                                                                    style=" display: block; padding-top: 5px; font-weight: 600;">International
+                                                                                    Fee</label>
+                                                                            </div>
+
+                                                                            <div style=" display: flex;
+                                                                                    justify-content: left;">
+                                                                                <input type="checkbox" id="is-promoted"
+                                                                                    onchange="onChecked('is-promoted','promoted-listing-block')"
+                                                                                    name="is-promoted"
+                                                                                    style="height: 22px; width: 22px; margin-right: 10px;">
+                                                                                <label for="is-promoted"
+                                                                                    style=" display: block; padding-top: 5px; font-weight: 600;">Promoted
+                                                                                    Listing</label>
+                                                                            </div>
+
+                                                                            <div style=" display: flex;
+                                                                                    justify-content: left;">
+                                                                                <input type="checkbox" id="tax"
+                                                                                    onchange="onChecked('tax','sales-tax-block')"
+                                                                                    name="tax"
+                                                                                    style="height: 22px; width: 22px; margin-right: 10px;">
+                                                                                <label for="tax"
+                                                                                    style=" display: block; padding-top: 5px; font-weight: 600;">Sales
+                                                                                    Tax</label>
+                                                                            </div>
+
+                                                                            <div style=" display: flex;
+                                                                                    justify-content: left;">
+                                                                                <input type="checkbox" id="other"
+                                                                                    onchange="onChecked('other','other-fees-block')"
+                                                                                    name="other"
+                                                                                    style="height: 22px; width: 22px; margin-right: 10px;">
+                                                                                <label for="other"
+                                                                                    style=" display: block; padding-top: 5px; font-weight: 600;">Other
+                                                                                    Fees</label>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Optional Input Fields -->
+                                                                <div>
+                                                                    <div id="promoted-listing-block"
+                                                                        style="margin-top: 20px; display: none;">
+                                                                        <label class="text-left"
+                                                                            for="promoted-listing">Promoted
+                                                                            Listing (%)</label>
+                                                                        <input name="promoted-listing"
+                                                                            id="promoted-listing" type="number" required
+                                                                            class="form-control">
+                                                                        <div class="text-left">
+                                                                            <small id="validate-promoted-listing"
+                                                                                style="color: red; display: none">Promoted
+                                                                                listing value
+                                                                                cannot
+                                                                                be
+                                                                                empty</small>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="sales-tax-block"
+                                                                        style="margin-top: 20px; display: none;">
+                                                                        <label class="text-left" for="sales-tax">Sales
+                                                                            Tax (%)</label>
+                                                                        <input name="expected-profit" id="sales-tax"
+                                                                            type="number" required class="form-control">
+                                                                        <div class="text-left">
+                                                                            <small id="validate-sales-tax"
+                                                                                style="color: red; display: none">Sales
+                                                                                Tax
+                                                                                cannot
+                                                                                be
+                                                                                empty</small>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="other-fees-block"
+                                                                        style="margin-top: 20px; display: none;">
+                                                                        <label class="text-left"
+                                                                            for="expected-profit">Other Fees</label>
+                                                                        <input name="other-fees" id="other-fees"
+                                                                            type="number" required class="form-control">
+                                                                        <div class="text-left">
+                                                                            <small id="validate-other-fees"
+                                                                                style="color: red; display: none">Other
+                                                                                Fees
+                                                                                cannot
+                                                                                be
+                                                                                empty</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="text-center col-md-4 col-md-offset-4"
+                                                            style="margin-top: 20px;">
+                                                            <div class="">
+                                                                <button class="btn-primary-custom" type="submit"
+                                                                    onclick="calculateFee()"
+                                                                    id="calForm-submit">Calculate
+                                                                </button>
+                                                            </div>
+                                                        </div> -->
+                                                    </form>
+                                                </div>
+                                                <div class="text-center" style="height: 100px; margin-top: 50px;">
+                                                    <div class="text-center"
+                                                        style="height: 70px; width: 50%; border: 2px solid #ffbb05 ; margin:auto">
+                                                        <h2> Price: <span id="final-cost">0.00</span> <Span
+                                                                id="final-currency">USD</Span></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="container text-center" style="margin-top: 40px">
+                                                    <div class="">
+                                                        <div class="">
+                                                            <div class="">
+                                                                <script async
+                                                                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9003533674874516"
+                                                                    crossorigin="anonymous"></script>
+                                                                <!-- inform-ad -->
+                                                                <ins class="adsbygoogle" style="display:block"
+                                                                    data-ad-client="ca-pub-9003533674874516"
+                                                                    data-ad-slot="3314689168" data-ad-format="auto"
+                                                                    data-full-width-responsive="true"></ins>
+                                                                <script>
+                                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                                </script>
+                                                            </div>
+                                                            <div class="text-center">Advertisement</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-6">
+                                                        <img src="./img/logo/ebay-logo.png" alt="" style="width: 80%">
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-6">
+                                                        <img src="./img/logo/Shopify-Logo.png" alt=""
+                                                            style="width: 80%">
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-6">
+                                                        <img src="./img/logo/WooCommerce_logo.png" alt=""
+                                                            style="width: 80%">
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-6">
+                                                        <img src="./img/logo/etsy.png" alt="" style="width: 80%">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--------------------- Top Right Advertisement Block ---------------------------->
+
+                                        <!-- <div class="col-md-3">
+                                            <div class="text-center ad-unit-2">
+                                                Advertisement
+                                                <div>
+                                                    <script async
+                                                        src="
+                                                https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9003533674874516"
+                                                        crossorigin="anonymous">
+                                                        </script>
+
+                                                    <ins class="adsbygoogle" style="display:block"
+                                                        data-ad-client="ca-pub-9003533674874516"
+                                                        data-ad-slot="9534297366" data-ad-format="auto"
+                                                        data-full-width-responsive="true"></ins>
+                                                    <script>
+                                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </li>
+        </ul> <!-- .cd-hero-slider -->
+    </section> <!-- .cd-hero -->
+    <div class="cd-half-width third-slide">
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-7 left-image">
+                                <img src="img/left-feature-image.jpg" style="width: 100%">
+                            </div>
+                            <div class="col-md-5">
+                                <div class="right-feature-text">
+                                    <h4>Shipping Cost Calculator</h4>
+                                    <p>This tool is for calculate the shipping cost for international sri lankan air
+                                        mail.
+                                        You can easily find the postal fee by using this tool. All the calculations are
+                                        done
+                                        according
+                                        to the latest sri lankan post shipping rates. You can download the shipping
+                                        rates
+                                        file from the below link.
+                                        Please feel free to contact us if any calculation performs wrong.</p>
+                                    <div class="feature-list">
+                                        <ul>
+                                            <p>- Fast and reliable</p>
+                                            <p>- No login and totally free</p>
+                                            <p>- Based on latest mail rates in Sri Lanka</p>
+                                            <p>- Light weight and responsive</p>
+                                        </ul>
+                                    </div>
+                                    <div class="text-center">
+                                        <script async
+                                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9003533674874516"
+                                            crossorigin="anonymous"></script>
+                                        <!-- result-page-adunit -->
+                                        <ins class="adsbygoogle" style="display:block"
+                                            data-ad-client="ca-pub-9003533674874516" data-ad-slot="6709641711"
+                                            data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
+                                    <div class="text-center">Advertisement</div>
+                                    <br>
+                                    <div class="primary-button">
+                                        <a href="files/shipping_rates.pdf" target="_blank"
+                                            rel="noopener noreferrer">Download
+                                            Mail Rates</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <footer>
+        <div class="text-center" style="padding-top: 25px">
+            <a href="termsandconditions.html" style="margin-left: 15px">Terms and Conditions</a>
+            <a href="privacy-policy.html" style="margin-left: 15px">Privacy Policy</a>
+        </div>
+        <p style="padding-top: 0px">Copyright &copy; 2021 www.shippingcal.com
+
+            | Powered by <em>Dhahas Technologies</em></p>
+    </footer>
+
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <!-- <script src="js/custom.js"></script> -->
+    <script src="js/ebay-fee-calc.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
