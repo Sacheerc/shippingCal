@@ -71,10 +71,6 @@ const rateData = [
     Group: 'H',
   },
   {
-    Country: 'Antilles (Netherland Antilles)',
-    Group: 'H',
-  },
-  {
     Country: 'Argentina',
     Group: 'H',
   },
@@ -92,7 +88,7 @@ const rateData = [
   },
   {
     Country: 'Australia',
-    Group: 'D',
+    Group: 'E',
   },
   {
     Country: 'Austria',
@@ -120,7 +116,7 @@ const rateData = [
   },
   {
     Country: 'Belarus',
-    Group: 'E',
+    Group: 'D',
   },
   {
     Country: 'Belgium',
@@ -136,11 +132,215 @@ const rateData = [
   },
   {
     Country: 'Bermuda',
-    Group: 'G',
+    Group: 'H',
   },
   {
     Country: 'Bhutan',
+    Group: 'B',
+  },
+  {
+    Country: 'Bolivia',
+    Group: 'H',
+  },
+  {
+    Country: 'Bosnia & Herzegovina',
+    Group: 'E',
+  },
+  {
+    Country: 'Botswana',
+    Group: 'D',
+  },
+  {
+    Country: 'Brazil',
+    Group: 'H',
+  },
+  {
+    Country: 'Brunei Darussalam',
     Group: 'C',
+  },
+  {
+    Country: 'Bulgaria',
+    Group: 'D',
+  },
+  {
+    Country: 'Burkina Faso',
+    Group: 'G',
+  },
+  {
+    Country: 'Burundi',
+    Group: 'E',
+  },
+  {
+    Country: 'Cambodia',
+    Group: 'B',
+  },
+  {
+    Country: 'Cameroon',
+    Group: 'G',
+  },
+  {
+    Country: 'Canada',
+    Group: 'H',
+  },
+  {
+    Country: 'Canary Island',
+    Group: 'E',
+  },
+  {
+    Country: 'Cape Verde',
+    Group: 'G',
+  },
+  {
+    Country: 'Cayman Island',
+    Group: 'H',
+  },
+  {
+    Country: 'Central African Rep',
+    Group: 'G',
+  },
+  {
+    Country: 'Chad',
+    Group: 'G',
+  },
+  {
+    Country: 'Chile',
+    Group: 'H',
+  },
+  {
+    Country: 'China',
+    Group: 'C',
+  },
+  {
+    Country: 'Christmas Islands',
+    Group: 'E',
+  },
+  {
+    Country: 'Cocos (Keeling) Island',
+    Group: 'E',
+  },
+  {
+    Country: 'Colombia',
+    Group: 'H',
+  },
+  {
+    Country: 'Comoros',
+    Group: 'E',
+  },
+  {
+    Country: 'Congo (Dem Rep)',
+    Group: 'H',
+  },
+  {
+    Country: "Congo (People's Rep.)",
+    Group: 'H',
+  },
+  {
+    Country: 'Cook Island',
+    Group: 'G',
+  },
+  {
+    Country: 'Costa Rica',
+    Group: 'H',
+  },
+  {
+    Country: 'Croatia',
+    Group: 'D',
+  },
+  {
+    Country: 'Cuba',
+    Group: 'H',
+  },
+  {
+    Country: 'Cyprus',
+    Group: 'C',
+  },
+  {
+    Country: 'Czech Rep',
+    Group: 'D',
+  },
+  {
+    Country: 'Denmark',
+    Group: 'E',
+  },
+  {
+    Country: 'Djibouti',
+    Group: 'C',
+  },
+  {
+    Country: 'Dominica',
+    Group: 'H',
+  },
+  {
+    Country: 'Dominican Republic',
+    Group: 'H',
+  },
+  {
+    Country: 'East Timor/Timor-Leste(Dem. Rep)',
+    Group: 'G',
+  },
+  {
+    Country: 'Ecuador',
+    Group: 'H',
+  },
+  {
+    Country: 'Egypt',
+    Group: 'C',
+  },
+  {
+    Country: 'EL Salvador',
+    Group: 'H',
+  },
+  {
+    Country: 'Equatorial Guinea',
+    Group: 'G',
+  },
+  {
+    Country: 'Eritrea',
+    Group: 'C',
+  },
+  {
+    Country: 'Estonia',
+    Group: 'F',
+  },
+  {
+    Country: 'Eswatini (Swaziland)',
+    Group: 'D',
+  },
+  {
+    Country: 'Ethiopia',
+    Group: 'D',
+  },
+  {
+    Country: 'Falkland Island',
+    Group: 'H',
+  },
+  {
+    Country: 'Faroe Island',
+    Group: 'E',
+  },
+  {
+    Country: 'Fiji',
+    Group: 'G',
+  },
+  {
+    Country: 'Finland',
+    Group: 'D',
+  },
+  {
+    Country: 'France',
+    Group: 'E',
+  },
+  {
+    Country: 'French Guyana',
+    Group: 'H',
+  },
+  {
+    Country: 'French Polynesia',
+    Group: 'H',
+  },
+  {
+    Country: 'Gabon',
+    Group: 'F',
   },
   {
     Country: 'Gambia',
@@ -184,7 +384,7 @@ const rateData = [
   },
   {
     Country: 'Guam',
-    Group: 'G',
+    Group: 'H',
   },
   {
     Country: 'Guatemala',
@@ -200,7 +400,7 @@ const rateData = [
   },
   {
     Country: 'Guinea Rep',
-    Group: 'G',
+    Group: 'H',
   },
   {
     Country: 'Guyana',
@@ -244,7 +444,7 @@ const rateData = [
   },
   {
     Country: 'Ireland',
-    Group: 'G',
+    Group: 'E',
   },
   {
     Country: 'Isle of Man',
@@ -316,7 +516,7 @@ const rateData = [
   },
   {
     Country: 'Latvia',
-    Group: 'F',
+    Group: 'D',
   },
   {
     Country: 'Lebanon',
@@ -340,127 +540,7 @@ const rateData = [
   },
   {
     Country: 'Lithuania',
-    Group: 'F',
-  },
-  {
-    Country: 'Ukraine',
-    Group: 'F',
-  },
-  {
-    Country: 'Uruguay',
-    Group: 'H',
-  },
-  {
-    Country: 'USA',
-    Group: 'G',
-  },
-  {
-    Country: 'Uzbekistan',
-    Group: 'C',
-  },
-  {
-    Country: 'Vanuatu',
-    Group: 'F',
-  },
-  {
-    Country: 'Bolivia',
-    Group: 'H',
-  },
-  {
-    Country: 'Bosnia & Herzegovina',
-    Group: 'E',
-  },
-  {
-    Country: 'Botswana',
     Group: 'D',
-  },
-  {
-    Country: 'Brazil',
-    Group: 'H',
-  },
-  {
-    Country: 'Brunei Darussalam',
-    Group: 'C',
-  },
-  {
-    Country: 'Bulgaria',
-    Group: 'E',
-  },
-  {
-    Country: 'Burkina Faso',
-    Group: 'G',
-  },
-  {
-    Country: 'Burundi',
-    Group: 'E',
-  },
-  {
-    Country: 'Cambodia',
-    Group: 'B',
-  },
-  {
-    Country: 'Cameroon',
-    Group: 'G',
-  },
-  {
-    Country: 'Canada',
-    Group: 'G',
-  },
-  {
-    Country: 'Canary Island',
-    Group: 'E',
-  },
-  {
-    Country: 'Cape Verde',
-    Group: 'G',
-  },
-  {
-    Country: 'Cayman Island',
-    Group: 'H',
-  },
-  {
-    Country: 'Central African Rep',
-    Group: 'G',
-  },
-  {
-    Country: 'Chad',
-    Group: 'G',
-  },
-  {
-    Country: 'Chile',
-    Group: 'H',
-  },
-  {
-    Country: 'China',
-    Group: 'C',
-  },
-  {
-    Country: 'Christmas Islands',
-    Group: 'E',
-  },
-  {
-    Country: 'Cocos (Keeling) Island',
-    Group: 'E',
-  },
-  {
-    Country: 'Colombia',
-    Group: 'H',
-  },
-  {
-    Country: 'Comoros',
-    Group: 'E',
-  },
-  {
-    Country: 'Congo (Dem Rep)',
-    Group: 'H',
-  },
-  {
-    Country: "Congo (People's Rep.)",
-    Group: 'H',
-  },
-  {
-    Country: 'Cook Island',
-    Group: 'G',
   },
   {
     Country: 'Luxemburg',
@@ -500,11 +580,11 @@ const rateData = [
   },
   {
     Country: 'Mariana Islands',
-    Group: 'G',
+    Group: 'H',
   },
   {
     Country: 'Marshall Island',
-    Group: 'G',
+    Group: 'H',
   },
   {
     Country: 'Martinique',
@@ -527,8 +607,8 @@ const rateData = [
     Group: 'H',
   },
   {
-    Country: 'Micronesia(Federated States)',
-    Group: 'G',
+    Country: 'Micronesia (Federated States)',
+    Group: 'H',
   },
   {
     Country: 'Moldova',
@@ -560,7 +640,7 @@ const rateData = [
   },
   {
     Country: 'Myanmar',
-    Group: 'C',
+    Group: 'B',
   },
   {
     Country: 'Namibia',
@@ -577,6 +657,10 @@ const rateData = [
   {
     Country: 'Netherlands',
     Group: 'E',
+  },
+  {
+    Country: 'Netherland Antilles',
+    Group: 'H',
   },
   {
     Country: 'New Caledonia',
@@ -596,7 +680,7 @@ const rateData = [
   },
   {
     Country: 'Nigeria',
-    Group: 'G',
+    Group: 'E',
   },
   {
     Country: 'Niue',
@@ -624,7 +708,7 @@ const rateData = [
   },
   {
     Country: 'Palau Island',
-    Group: 'G',
+    Group: 'H',
   },
   {
     Country: 'Panama (Rep)',
@@ -632,7 +716,7 @@ const rateData = [
   },
   {
     Country: 'Papua New Guinea',
-    Group: 'F',
+    Group: 'D',
   },
   {
     Country: 'Paraguay',
@@ -652,135 +736,15 @@ const rateData = [
   },
   {
     Country: 'Poland',
-    Group: 'F',
-  },
-  {
-    Country: 'Portugal',
-    Group: 'F',
-  },
-  {
-    Country: 'Puerto Rico',
-    Group: 'G',
-  },
-  {
-    Country: 'Vatican City',
-    Group: 'E',
-  },
-  {
-    Country: 'Venezuela',
-    Group: 'H',
-  },
-  {
-    Country: 'Vietnam',
-    Group: 'B',
-  },
-  {
-    Country: 'Virgin Islands (GB)',
-    Group: 'E',
-  },
-  {
-    Country: 'Virgin Islands (USA)',
-    Group: 'G',
-  },
-  {
-    Country: 'Costa Rica',
-    Group: 'H',
-  },
-  {
-    Country: 'Croatia',
-    Group: 'E',
-  },
-  {
-    Country: 'Cuba',
-    Group: 'H',
-  },
-  {
-    Country: 'Cyprus',
-    Group: 'E',
-  },
-  {
-    Country: 'Czech Rep',
-    Group: 'F',
-  },
-  {
-    Country: 'Denmark',
-    Group: 'E',
-  },
-  {
-    Country: 'Djibouti',
-    Group: 'C',
-  },
-  {
-    Country: 'Dominica',
-    Group: 'H',
-  },
-  {
-    Country: 'Dominican Republic',
-    Group: 'H',
-  },
-  {
-    Country: 'East Timor/Timor-Leste(Dem. Rep)',
-    Group: 'G',
-  },
-  {
-    Country: 'Ecuador',
-    Group: 'H',
-  },
-  {
-    Country: 'Egypt',
-    Group: 'C',
-  },
-  {
-    Country: 'EL Salvador',
-    Group: 'H',
-  },
-  {
-    Country: 'Equatorial Guinea',
-    Group: 'G',
-  },
-  {
-    Country: 'Eritrea',
-    Group: 'C',
-  },
-  {
-    Country: 'Estonia',
-    Group: 'F',
-  },
-  {
-    Country: 'Ethiopia',
     Group: 'D',
   },
   {
-    Country: 'Falkland Island',
-    Group: 'H',
-  },
-  {
-    Country: 'Faroe Island',
+    Country: 'Portugal',
     Group: 'E',
   },
   {
-    Country: 'Fiji',
-    Group: 'G',
-  },
-  {
-    Country: 'Finland',
-    Group: 'F',
-  },
-  {
-    Country: 'France',
-    Group: 'E',
-  },
-  {
-    Country: 'French Guyana',
+    Country: 'Puerto Rico',
     Group: 'H',
-  },
-  {
-    Country: 'French Polynesia',
-    Group: 'H',
-  },
-  {
-    Country: 'Gabon',
-    Group: 'F',
   },
   {
     Country: 'Qatar',
@@ -828,11 +792,11 @@ const rateData = [
   },
   {
     Country: 'Serbia',
-    Group: 'F',
+    Group: 'D',
   },
   {
     Country: 'Seychelles',
-    Group: 'F',
+    Group: 'B',
   },
   {
     Country: 'Sierra Leone',
@@ -848,7 +812,7 @@ const rateData = [
   },
   {
     Country: 'Slovenia',
-    Group: 'F',
+    Group: 'D',
   },
   {
     Country: 'Solomon Island',
@@ -903,12 +867,8 @@ const rateData = [
     Group: 'H',
   },
   {
-    Country: 'Swaziland',
-    Group: 'D',
-  },
-  {
     Country: 'Sweden',
-    Group: 'E',
+    Group: 'D',
   },
   {
     Country: 'Switzerland',
@@ -983,12 +943,52 @@ const rateData = [
     Group: 'E',
   },
   {
+    Country: 'Ukraine',
+    Group: 'D',
+  },
+  {
+    Country: 'Uruguay',
+    Group: 'H',
+  },
+  {
+    Country: 'USA',
+    Group: 'H',
+  },
+  {
+    Country: 'Uzbekistan',
+    Group: 'C',
+  },
+  {
+    Country: 'Vanuatu',
+    Group: 'F',
+  },
+  {
+    Country: 'Vatican City',
+    Group: 'E',
+  },
+  {
+    Country: 'Venezuela',
+    Group: 'H',
+  },
+  {
+    Country: 'Vietnam',
+    Group: 'B',
+  },
+  {
+    Country: 'Virgin Islands (GB)',
+    Group: 'E',
+  },
+  {
+    Country: 'Virgin Islands (USA)',
+    Group: 'H',
+  },
+  {
     Country: 'Wallis and Futuna islands',
     Group: 'G',
   },
   {
-    Country: '* Yemen',
-    Group: 'C',
+    Country: 'Yemen',
+    Group: 'G',
   },
   {
     Country: 'Zambia',
@@ -1050,7 +1050,9 @@ function displayResults(
   ).innerHTML = `Total Item Price: ${convertedItemPrice}`;
   document.getElementById('loadingUi').style.display = 'none';
   document.getElementById('currency2').value = currency;
-  document.getElementById('ex-rate-display').innerHTML = `1 ${exchangeRates[currency].currency} = ${exchangeRates[currency].fromLkr.toFixed(2)} LKR`;
+  document.getElementById('ex-rate-display').innerHTML = `1 ${
+    exchangeRates[currency].currency
+  } = ${exchangeRates[currency].fromLkr.toFixed(2)} LKR`;
   document.getElementById('resultSection').style.display = 'block';
   document.getElementById('resultSection2').style.display = 'block';
 }
@@ -1116,7 +1118,9 @@ function updateResults(value) {
   let currency = value;
   let convertedPostalFee = convertCurrency(total, currency);
   let convertedItemPrice = convertCurrency(itemPrice, currency);
-  document.getElementById('ex-rate-display').innerHTML = `1 ${exchangeRates[currency].currency} = ${(1/exchangeRates[currency].fromLkr).toFixed(2)} LKR`;
+  document.getElementById('ex-rate-display').innerHTML = `1 ${
+    exchangeRates[currency].currency
+  } = ${(1 / exchangeRates[currency].fromLkr).toFixed(2)} LKR`;
 
   document.getElementById(
     'totalFee'
