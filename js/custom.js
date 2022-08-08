@@ -1,43 +1,43 @@
 const groupRates = [
   {
     group: 'A',
-    first20: 55,
-    addtional10: 15,
+    first20: 110,
+    addtional10: 35,
   },
   {
     group: 'B',
-    first20: 60,
-    addtional10: 15,
+    first20: 120,
+    addtional10: 40,
   },
   {
     group: 'C',
-    first20: 65,
-    addtional10: 20,
+    first20: 130,
+    addtional10: 40,
   },
   {
     group: 'D',
-    first20: 70,
-    addtional10: 20,
+    first20: 140,
+    addtional10: 45,
   },
   {
     group: 'E',
-    first20: 75,
-    addtional10: 25,
+    first20: 150,
+    addtional10: 50,
   },
   {
     group: 'F',
-    first20: 80,
-    addtional10: 25,
+    first20: 160,
+    addtional10: 55,
   },
   {
     group: 'G',
-    first20: 85,
-    addtional10: 30,
+    first20: 170,
+    addtional10: 60,
   },
   {
     group: 'H',
-    first20: 110,
-    addtional10: 40,
+    first20: 210,
+    addtional10: 85,
   },
 ];
 
