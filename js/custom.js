@@ -1003,6 +1003,7 @@ const rateData = [
 let exchangeRates = [];
 let total;
 let itemPrice;
+const registrationFee = 870;
 
 function setCountry() {
   let list = '';
@@ -1148,7 +1149,7 @@ function calculateSum(weight, first20, additional10, isRegistered) {
   }
 
   if (isRegistered) {
-    totalFee += 200;
+    totalFee += registrationFee;
   }
 
   return totalFee;
