@@ -1181,19 +1181,43 @@ async function fetchExchangeRates() {
   if (localStorage.getItem('date') !== new Date().toDateString()) {
     document.getElementById('waitingInfo').style.display = 'block';
     localStorage.clear();
-    const response = await fetch(
-      'https://calm-ravine-73220.herokuapp.com/https://www.x-rates.com/table/?from=LKR&amount=1'
-    );
-    const text = await response.text();
+    // const response = await fetch(
+    //   'https://calm-ravine-73220.herokuapp.com/https://www.x-rates.com/table/?from=LKR&amount=1'
+    // );
+    // const text = await response.text();
+    // let currency = [{ currency: 'LKR', fromLkr: 1, toLkr: 1 }];
+    // let expUSD = /(from=LKR&amp;to=USD.*<\/a>|from=USD&amp;to=LKR.*<\/a>)/g;
+    // let expAUD = /(from=LKR&amp;to=AUD.*<\/a>|from=AUD&amp;to=LKR.*<\/a>)/g;
+    // let expEUR = /(from=LKR&amp;to=EUR.*<\/a>|from=EUR&amp;to=LKR.*<\/a>)/g;
+    // let expGBP = /(from=LKR&amp;to=GBP.*<\/a>|from=GBP&amp;to=LKR.*<\/a>)/g;
+    // currency.push(extractCurrency('USD', expUSD, text));
+    // currency.push(extractCurrency('AUD', expAUD, text));
+    // currency.push(extractCurrency('EUR', expEUR, text));
+    // currency.push(extractCurrency('GBP', expGBP, text));
+
     let currency = [{ currency: 'LKR', fromLkr: 1, toLkr: 1 }];
-    let expUSD = /(from=LKR&amp;to=USD.*<\/a>|from=USD&amp;to=LKR.*<\/a>)/g;
-    let expAUD = /(from=LKR&amp;to=AUD.*<\/a>|from=AUD&amp;to=LKR.*<\/a>)/g;
-    let expEUR = /(from=LKR&amp;to=EUR.*<\/a>|from=EUR&amp;to=LKR.*<\/a>)/g;
-    let expGBP = /(from=LKR&amp;to=GBP.*<\/a>|from=GBP&amp;to=LKR.*<\/a>)/g;
-    currency.push(extractCurrency('USD', expUSD, text));
-    currency.push(extractCurrency('AUD', expAUD, text));
-    currency.push(extractCurrency('EUR', expEUR, text));
-    currency.push(extractCurrency('GBP', expGBP, text));
+
+    currency.push({
+      currency: 'USD',
+      fromLkr: 0.002763,
+      toLkr: 361.876209,
+    });
+    currency.push({
+      currency: 'AUD',
+      fromLkr: 0.004004,
+      toLkr: 249.723009,
+    });
+    currency.push({
+      currency: 'EUR',
+      fromLkr: 0.002773,
+      toLkr: 360.569804,
+    });
+    currency.push({
+      currency: 'GBP',
+      fromLkr: 0.002355,
+      toLkr: 424.656636,
+    });
+
     localStorage.setItem('date', new Date().toDateString());
     localStorage.setItem('currency', JSON.stringify(currency));
     exchangeRates = currency;
