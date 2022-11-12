@@ -1,3 +1,19 @@
+const firebaseConfig = {
+  apiKey: 'AIzaSyAXKC5vcfdSgCSvGbR5MEXsdR92YhpDAho',
+  authDomain: 'shippingcal-7c4af.firebaseapp.com',
+  projectId: 'shippingcal-7c4af',
+  storageBucket: 'shippingcal-7c4af.appspot.com',
+  messagingSenderId: '485867483990',
+  appId: '1:485867483990:web:90355efb63936ce52b9cf7',
+  measurementId: 'G-YVJGB0TJ1Y',
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = firebase.firestore();
+
 const groupRates = [
   {
     group: 'A',
@@ -1181,43 +1197,7 @@ async function fetchExchangeRates() {
   if (localStorage.getItem('date') !== new Date().toDateString()) {
     document.getElementById('waitingInfo').style.display = 'block';
     localStorage.clear();
-    // const response = await fetch(
-    //   'https://calm-ravine-73220.herokuapp.com/https://www.x-rates.com/table/?from=LKR&amount=1'
-    // );
-    // const text = await response.text();
-    // let currency = [{ currency: 'LKR', fromLkr: 1, toLkr: 1 }];
-    // let expUSD = /(from=LKR&amp;to=USD.*<\/a>|from=USD&amp;to=LKR.*<\/a>)/g;
-    // let expAUD = /(from=LKR&amp;to=AUD.*<\/a>|from=AUD&amp;to=LKR.*<\/a>)/g;
-    // let expEUR = /(from=LKR&amp;to=EUR.*<\/a>|from=EUR&amp;to=LKR.*<\/a>)/g;
-    // let expGBP = /(from=LKR&amp;to=GBP.*<\/a>|from=GBP&amp;to=LKR.*<\/a>)/g;
-    // currency.push(extractCurrency('USD', expUSD, text));
-    // currency.push(extractCurrency('AUD', expAUD, text));
-    // currency.push(extractCurrency('EUR', expEUR, text));
-    // currency.push(extractCurrency('GBP', expGBP, text));
-
-    let currency = [{ currency: 'LKR', fromLkr: 1, toLkr: 1 }];
-
-    currency.push({
-      currency: 'USD',
-      fromLkr: 0.002763,
-      toLkr: 361.876209,
-    });
-    currency.push({
-      currency: 'AUD',
-      fromLkr: 0.004004,
-      toLkr: 249.723009,
-    });
-    currency.push({
-      currency: 'EUR',
-      fromLkr: 0.002773,
-      toLkr: 360.569804,
-    });
-    currency.push({
-      currency: 'GBP',
-      fromLkr: 0.002355,
-      toLkr: 424.656636,
-    });
-
+    var currency = await loadExchangeRates();
     localStorage.setItem('date', new Date().toDateString());
     localStorage.setItem('currency', JSON.stringify(currency));
     exchangeRates = currency;
@@ -1236,4 +1216,45 @@ function extractCurrency(currency, currencyRegex, text) {
     toLkr: parseFloat(scraped[1].match(regexFloat)[0]),
   };
   return obj;
+}
+
+async function loadExchangeRates() {
+  const snapshot = await db.collection('exchange-rates').get();
+  var data = snapshot.docs.map((doc) => doc.data());
+  let currency = [];
+  if (data) {
+    data.forEach((obj) => {
+      currency.push(obj);
+    });
+  } else {
+    currency = loadDefaultRates();
+  }
+  return currency;
+}
+
+function loadDefaultRates() {
+  let currency = [];
+  currency.push({ currency: 'LKR', fromLkr: 1, toLkr: 1 });
+  currency.push({
+    currency: 'USD',
+    fromLkr: 0.002763,
+    toLkr: 361.876209,
+  });
+  currency.push({
+    currency: 'AUD',
+    fromLkr: 0.004004,
+    toLkr: 249.723009,
+  });
+  currency.push({
+    currency: 'EUR',
+    fromLkr: 0.002773,
+    toLkr: 360.569804,
+  });
+  currency.push({
+    currency: 'GBP',
+    fromLkr: 0.002355,
+    toLkr: 424.656636,
+  });
+
+  return currency;
 }
